@@ -1,114 +1,29 @@
-
 <!DOCTYPE html>
 <html lang="id">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>VortexStore Auto Topup</title>
-<script src="https://cdn.tailwindcss.com"></script>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VortexStore</title>
 <style>
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:'Poppins',sans-serif;
-}
 body{
-background:#060816;
+background:#0f172a;
 color:white;
-overflow-x:hidden;
+font-family:sans-serif;
+display:flex;
+justify-content:center;
+align-items:center;
+height:100vh;
+flex-direction:column;
 }
-.bg{
-position:fixed;
-inset:0;
-background:
-radial-gradient(circle at top right,#312e81 0%,transparent 35%),
-radial-gradient(circle at bottom left,#0f766e 0%,transparent 35%);
-opacity:0.25;
-z-index:-1;
-}
-.glass{
-background:rgba(255,255,255,0.04);
-backdrop-filter:blur(14px);
-border:1px solid rgba(255,255,255,0.05);
-}
-.products{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:16px;
-}
-.card:hover{
-<h2 class="text-xl font-bold">Checkout</h2>
-<button onclick="closePopup()">✖</button>
-</div>
+</style>
+</head>
+<body>
 
-<input type="text" id="userId" placeholder="Masukkan User ID" class="popup-input" />
+<h1>VortexStore Online 🚀</h1>
+<p>Render berhasil berjalan</p>
 
-<select id="productSelect" class="popup-input">
-<option value="ML86">86 Diamond - Rp10.000</option>
-<option value="ML172">172 Diamond - Rp20.000</option>
-</select>
-
-<button class="checkout-btn" onclick="checkoutNow()">
-Bayar Sekarang
-</button>
-
-</div>
-</div>
-
-<div id="toast" class="toast"></div>
-
-<script>
-let currentGame = '';
-
-function openPopup(game){
-currentGame = game;
-document.getElementById('checkoutPopup').style.display='flex';
-}
-
-function closePopup(){
-document.getElementById('checkoutPopup').style.display='none';
-}
-
-function outsideClose(event){
-if(event.target.id === 'checkoutPopup'){
-closePopup();
-}
-}
-
-function showToast(message){
-let toast = document.getElementById('toast');
-toast.innerText = message;
-toast.classList.add('show');
-
-setTimeout(()=>{
-toast.classList.remove('show');
-},2500);
-}
-
-async function checkoutNow(){
-
-const userId = document.getElementById('userId').value;
-const service = document.getElementById('productSelect').value;
-
-if(userId === ''){
-showToast('Masukkan User ID');
-return;
-}
-
-showToast('Memproses order...');
-
-try{
-
-const response = await fetch('/order',{
-method:'POST',
-headers:{
-'Content-Type':'application/json'
-},
-body:JSON.stringify({
-game: currentGame,
+</body>
+</html>game: currentGame,
 userId,
 service
 })
