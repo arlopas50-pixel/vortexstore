@@ -53,7 +53,15 @@ Buy Now
 
 function orderNow(){
 
-alert('Website berhasil berjalan')
+const userId = prompt('Masukkan User ID')
+
+if(!userId){
+return
+}
+
+alert(
+'Order diproses untuk ID: ' + userId
+)
 
 }
 
