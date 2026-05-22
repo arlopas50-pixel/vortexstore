@@ -149,51 +149,72 @@ top:0;
 left:0;
 width:100%;
 height:100%;
-background:rgba(0,0,0,0.7);
+background:rgba(0,0,0,0.75);
 display:none;
 justify-content:center;
 align-items:center;
 z-index:999;
+padding:20px;
 }
 
 .popup-box{
 background:#0f172a;
+width:100%;
+max-width:420px;
 padding:30px;
-border-radius:20px;
-width:90%;
-max-width:400px;
+border-radius:24px;
+border:1px solid rgba(255,255,255,0.05);
+box-shadow:
+0 0 30px rgba(59,130,246,0.2);
 }
 
 .popup-box h2{
-margin-bottom:20px;
+font-size:28px;
+margin-bottom:10px;
+}
+
+.product-price{
+font-size:22px;
+font-weight:bold;
+color:#60a5fa;
+margin-bottom:25px;
 }
 
 .popup-box input{
 width:100%;
 padding:15px;
-margin-bottom:15px;
 border:none;
-border-radius:12px;
+outline:none;
+border-radius:14px;
 background:#1e293b;
 color:white;
 font-size:16px;
+margin-bottom:15px;
+}
+
+.nickname{
+background:#111827;
+padding:14px;
+border-radius:14px;
+margin-bottom:20px;
+color:#cbd5e1;
 }
 
 .popup-box button{
 width:100%;
-padding:14px;
+padding:15px;
 border:none;
-border-radius:12px;
-background:#3b82f6;
+border-radius:14px;
+background:linear-gradient(to right,#3b82f6,#8b5cf6);
 color:white;
+font-size:16px;
 font-weight:bold;
 margin-top:10px;
+cursor:pointer;
 }
 
 .close-btn{
 background:#ef4444 !important;
-}
-
 }
 
 </style>
@@ -376,11 +397,17 @@ Buy Now
   
 <!-- SCRIPT -->
 
-  <div class="popup" id="popup">
+<div class="popup" id="popup">
 
 <div class="popup-box">
 
-<h2>Checkout Mobile Legends</h2>
+<h2 id="productName">
+Mobile Legends
+</h2>
+
+<div class="product-price" id="productPrice">
+Rp 0
+</div>
 
 <input
 type="text"
@@ -391,6 +418,10 @@ placeholder="Masukkan User ID">
 type="text"
 id="serverId"
 placeholder="Masukkan Server ID">
+
+<div class="nickname" id="nickname">
+Nickname: -
+</div>
 
 <button onclick="submitOrder()">
 Checkout
@@ -403,18 +434,28 @@ Tutup
 
 </div>
 
-  </div>
+</div>
   
 <script>
 
 let selectedService = ''
+let selectedPrice = ''
+let selectedProduct = ''
 
-function orderNow(service){
+function orderNow(service,product,price){
 
 selectedService = service
+selectedProduct = product
+selectedPrice = price
 
 document.getElementById('popup')
 .style.display = 'flex'
+
+document.getElementById('productName')
+.innerText = product
+
+document.getElementById('productPrice')
+.innerText = price
 
 }
 
@@ -441,13 +482,10 @@ return
 
 }
 
+document.getElementById('nickname')
+.innerText = 'Nickname: Player ML'
+
 try{
-
-alert('Checking Nickname...')
-
-const nick = 'Player ML'
-
-alert('Nickname: ' + nick)
 
 alert('Mengirim transaksi...')
 
@@ -470,8 +508,6 @@ service:selectedService
 })
 
 const result = await response.json()
-
-console.log(result)
 
 alert(JSON.stringify(result))
 
