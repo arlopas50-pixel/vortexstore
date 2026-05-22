@@ -1,7 +1,11 @@
 <!DOCTYPE html>
 <html lang="id">
+
 <head>
-<meta 
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>VortexStore</title>
 
 <style>
 
@@ -15,23 +19,24 @@ font-family:Arial,sans-serif;
 body{
 background:#020b1f;
 color:white;
-padding:40px;
+padding:25px;
 }
 
 .logo{
-font-size:52px;
-margin-bottom:20px;
+font-size:50px;
+margin-bottom:10px;
 }
 
-h1{
+.title{
 font-size:42px;
+font-weight:bold;
 margin-bottom:10px;
 }
 
 .subtitle{
 font-size:18px;
-margin-bottom:40px;
 color:#d1d5db;
+margin-bottom:35px;
 }
 
 .products{
@@ -57,18 +62,14 @@ margin-bottom:20px;
 }
 
 .card button{
+width:100%;
 background:#3b82f6;
 border:none;
-padding:14px 25px;
+padding:14px;
 border-radius:14px;
 color:white;
 font-size:16px;
 font-weight:bold;
-width:100%;
-}
-
-.card button:hover{
-opacity:0.9;
 }
 
 @media(max-width:700px){
@@ -87,18 +88,16 @@ grid-template-columns:1fr;
 
 <div class="logo">⚡</div>
 
-<h1>VortexStore</h1>
+<div class="title">
+VortexStore
+</div>
 
-<p class="subtitle">
+<div class="subtitle">
 Auto Topup Termurah Terlengkap Dan Tercepat
-</p>
+</div>
 
 <div class="products">
 
-ISI CARD PRODUK DI SINI
-
-</div>
-  
 <div class="card">
 <h2>55 Diamonds</h2>
 <p>Rp 13.414</p>
@@ -153,80 +152,9 @@ Buy Now
 </button>
 </div>
 
-<div class="card">
-<h2>2195 Diamonds</h2>
-<p>Rp 499.728</p>
-
-<button onclick="orderNow('ML2195')">
-Buy Now
-</button>
 </div>
 
-<div class="card">
-<h2>3688 Diamonds</h2>
-<p>Rp 833.682</p>
-
-<button onclick="orderNow('ML3688')">
-Buy Now
-</button>
-</div>
-
-<div class="card">
-<h2>5532 Diamonds</h2>
-<p>Rp 1.258.776</p>
-
-<button onclick="orderNow('ML5532')">
-Buy Now
-</button>
-</div>
-
-<div class="card">
-<h2>9288 Diamonds</h2>
-<p>Rp 2.090.739</p>
-
-<button onclick="orderNow('ML9288')">
-Buy Now
-</button>
-</div>
-
-</div>
 <script>
-
-function orderNow(){
-
-const userId = prompt('Masukkan User ID')
-
-if(!userId){
-return
-}
-
-const serverId = prompt('Masukkan Server ID')
-
-if(!serverId){
-return
-}
-
-const confirmBuy = confirm(
-'Beli diamond untuk ID ' 
-+ userId + 
-' (' + serverId + ')?'
-)
-
-if(confirmBuy){
-
-alert(
-'Pesanan berhasil dikirim\n\nID: '
-+ userId +
-'\nServer: ' +
-serverId
-)
-
-}
-
-}
-
-</script>
-  <script>
 
 async function orderNow(service){
 
@@ -276,7 +204,7 @@ alert('Server Error')
 
 }
 
-  </script>
-  
+</script>
+
 </body>
 </html>
