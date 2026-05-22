@@ -244,7 +244,32 @@ Buy Now
 </div>
 
 <!-- SCRIPT -->
+<div class="popup" id="popup">
 
+<div class="popup-box">
+
+<h2>Checkout Mobile Legends</h2>
+
+<input type="text"
+id="userId"
+placeholder="Masukkan User ID">
+
+<input type="text"
+id="serverId"
+placeholder="Masukkan Server ID">
+
+<button onclick="submitOrder()">
+Lanjutkan
+</button>
+
+<button class="close-btn"
+onclick="closePopup()">
+Tutup
+</button>
+
+</div>
+
+</div>
 <script>
 
 async function orderNow(service){
