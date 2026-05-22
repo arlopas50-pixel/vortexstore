@@ -172,6 +172,57 @@ serverId
 }
 
 </script>
+  <script>
+
+async function orderNow(service){
+
+const userId = prompt('Masukkan User ID')
+
+if(!userId){
+return
+}
+
+const serverId = prompt('Masukkan Server ID')
+
+if(!serverId){
+return
+}
+
+alert('Mengirim pesanan...')
+
+try{
+
+const response = await fetch('/order',{
+
+method:'POST',
+
+headers:{
+'Content-Type':'application/json'
+},
+
+body:JSON.stringify({
+
+userId:userId,
+serverId:serverId,
+service:service
+
+})
+
+})
+
+const result = await response.json()
+
+alert(JSON.stringify(result))
+
+}catch(err){
+
+alert('Server Error')
+
+}
+
+}
+
+  </script>
   
 </body>
 </html>
