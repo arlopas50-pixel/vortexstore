@@ -58,7 +58,7 @@ key: apikey,
 sign: sign,
 type: 'order',
 service: service,
-data_no: userId + serverId
+data_no: userId + '|' + serverId
 }
 )
 
