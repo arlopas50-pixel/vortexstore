@@ -28,6 +28,11 @@ background:#3b82f6;
 color:white;
 font-weight:bold;
 }
+  .products{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:15px;
+  }
 </style>
 
 </head>
@@ -46,6 +51,7 @@ font-weight:bold;
 <button onclick="orderNow()">
 Buy Now
 </button>
+  
 <div class="card">
 <h2>55 Diamonds</h2>
 <p>Rp 13.414</p>
@@ -81,7 +87,11 @@ Buy Now
 <p>Rp 165.085</p>
 <button onclick="orderNow()">Buy Now</button>
 </div>
+<div class="products">
 
+SEMUA CARD DISINI
+
+</div>
 <script>
 
 function orderNow(){
