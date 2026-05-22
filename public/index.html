@@ -294,7 +294,6 @@ Buy Now
 © 2025 VortexStore — Powered By VIP Reseller
 </div>
 
-<!-- SCRIPT -->
 <div class="popup" id="popup">
 
 <div class="popup-box">
@@ -321,48 +320,48 @@ Tutup
 </div>
 
 </div>
+  
+<!-- SCRIPT -->
+
 <script>
 
-async function orderNow(service){
+let selectedService = ''
 
-const userId = prompt('Masukkan User ID')
+function orderNow(service){
 
-if(!userId){
-return
+selectedService = service
+
+document.getElementById('popup')
+.style.display = 'flex'
+
 }
 
-const serverId = prompt('Masukkan Server ID')
+function closePopup(){
 
-if(!serverId){
-return
+document.getElementById('popup')
+.style.display = 'none'
+
 }
 
-alert('Mengecek nickname...')
+async function submitOrder(){
+
+const userId =
+document.getElementById('userId').value
+
+const serverId =
+document.getElementById('serverId').value
+
+if(!userId || !serverId){
+
+alert('Lengkapi data')
+
+return
+
+}
 
 try{
 
-const check = await fetch('/cek-nickname',{
-
-method:'POST',
-
-headers:{
-'Content-Type':'application/json'
-},
-
-body:JSON.stringify({
-
-userId:userId,
-serverId:serverId
-
-})
-
-})
-
-const nick = await check.json()
-
-alert(
-'Nickname: ' + nick.nickname
-)
+alert('Mengirim pesanan...')
 
 const response = await fetch('/order',{
 
@@ -376,7 +375,7 @@ body:JSON.stringify({
 
 userId:userId,
 serverId:serverId,
-service:service
+service:selectedService
 
 })
 
@@ -385,6 +384,8 @@ service:service
 const result = await response.json()
 
 alert(JSON.stringify(result))
+
+closePopup()
 
 }catch(err){
 
