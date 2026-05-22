@@ -12,12 +12,16 @@ color:white;
 font-family:sans-serif;
 padding:20px;
 }
-
+.products{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:15px;
+margin-top:20px;
+}
 .card{
 background:#111827;
 padding:20px;
 border-radius:20px;
-margin-top:20px;
 }
 
 button{
@@ -40,18 +44,10 @@ gap:15px;
 <body>
 
 <h1>⚡ VortexStore</h1>
-<p>Auto Topup Super Tercepat</p>
+<p>Auto Topup Termurah Terlengkap Dan tercepat</p>
 
-<div class="card">
+<div class="products">
 
-<h2>Mobile Legends</h2>
-
-<p>86 Diamond - Rp10.000</p>
-
-<button onclick="orderNow()">
-Buy Now
-</button>
-  
 <div class="card">
 <h2>55 Diamonds</h2>
 <p>Rp 13.414</p>
@@ -87,33 +83,8 @@ Buy Now
 <p>Rp 165.085</p>
 <button onclick="orderNow()">Buy Now</button>
 </div>
-<div class="products">
-
-SEMUA CARD DISINI
 
 </div>
-<script>
-
-function orderNow(){
-
-const userId = prompt('Masukkan User ID')
-
-if(!userId){
-return
-}
-
-const confirmBuy = confirm(
-'Beli 86 Diamond untuk ID ' + userId + '?'
-)
-
-if(confirmBuy){
-
-alert('Pesanan berhasil dikirim')
-
-}
-
-}
-</script>
 
 </body>
 </html>
