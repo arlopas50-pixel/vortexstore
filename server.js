@@ -1,40 +1,58 @@
 const express = require('express')
 const axios = require('axios')
 const crypto = require('crypto')
-require('dotenv').config()
+const path = require('path')
 
 const app = express()
 
 app.use(express.json())
 app.use(express.static('public'))
 
+app.get('/', (req,res)=>{
+res.sendFile(path.join(__dirname,'public','index.html'))
+})
+
 app.post('/order', async(req,res)=>{
 
 try{
 
-const { userId, service } = req.body
+const { userId, serverId, service } = req.body
 
-const refId = 'VRX' + Date.now()
+const apiid = 'FaV5LJPb'
+const apikey = 'bMFChywUboh7CRyPEd7QewgPlJtri6YGDBHdnxR75gmorBN4DleeJL92Lv20uYJz'
 
 const sign = crypto
 .createHash('md5')
-.update(process.env.VIP_API_ID + process.env.VIP_API_KEY + refId)
+.update(apiid + apikey)
 .digest('hex')
 
 const response = await axios.post(
 'https://vip-reseller.co.id/api/game-feature',
 {
-key: process.env.VIP_API_KEY,
+key: apikey,
 sign: sign,
 type: 'order',
 service: service,
-data_no: userId,
-trxid: refId
+data_no: userId + serverId
 }
 )
 
+res.json(response.data)
+
+}catch(err){
+
 res.json({
-success:true,
+success:false,
+message:err.message
+})
+
+}
+
+})
+
+app.listen(process.env.PORT || 3000, ()=>{
+console.log('Server running')
+})success:true,
 data:response.data
 })
 
