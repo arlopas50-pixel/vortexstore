@@ -8,18 +8,18 @@ const app = express()
 app.use(express.json())
 app.use(express.static('public'))
 
-app.get('/', (req,res)=>{
-res.sendFile(path.join(__dirname,'public','index.html'))
+app.get('/', (req, res) => {
+res.sendFile(path.join(__dirname, 'public', 'index.html'))
 })
 
-app.post('/order', async(req,res)=>{
+app.post('/order', async (req, res) => {
 
-try{
+try {
 
 const { userId, serverId, service } = req.body
 
-const apiid = 'FaV5LJPb'
-const apikey = 'bMFChywUboh7CRyPEd7QewgPlJtri6YGDBHdnxR75gmorBN4DleeJL92Lv20uYJz'
+const apiid = 'ISI_API_ID'
+const apikey = 'ISI_API_KEY'
 
 const sign = crypto
 .createHash('md5')
@@ -39,31 +39,17 @@ data_no: userId + serverId
 
 res.json(response.data)
 
-}catch(err){
+} catch (err) {
 
 res.json({
-success:false,
-message:err.message
+success: false,
+message: err.message
 })
 
 }
 
 })
 
-app.listen(process.env.PORT || 3000, ()=>{
+app.listen(process.env.PORT || 3000, () => {
 console.log('Server running')
-})success:true,
-data:response.data
 })
-
-}catch(err){
-
-res.json({
-success:false
-})
-
-}
-
-})
-
-app.listen(process.env.PORT || 3000)
