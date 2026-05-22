@@ -3,18 +3,41 @@
 <head>
 <meta 
 
-.products{
-display:grid;
-grid-template-columns:repeat(2,1fr);
-gap:20px;
-margin-top:30px;
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,sans-serif;
+}
+
+body{
+background:#020b1f;
+color:white;
+padding:40px;
+}
+
+.logo{
+font-size:52px;
+margin-bottom:20px;
+}
+
+h1{
+font-size:42px;
+margin-bottom:10px;
+}
+
+.subtitle{
+font-size:18px;
+margin-bottom:40px;
+color:#d1d5db;
 }
 
 .products{
 display:grid;
 grid-template-columns:repeat(2,1fr);
 gap:20px;
-margin-top:30px;
 }
 
 .card{
@@ -41,19 +64,41 @@ border-radius:14px;
 color:white;
 font-size:16px;
 font-weight:bold;
+width:100%;
 }
+
+.card button:hover{
+opacity:0.9;
+}
+
+@media(max-width:700px){
+
+.products{
+grid-template-columns:1fr;
+}
+
+}
+
 </style>
 
 </head>
 
 <body>
 
-<h1>⚡ VortexStore</h1>
-<p>Auto Topup Termurah Terlengkap Dan tercepat</p>
+<div class="logo">⚡</div>
+
+<h1>VortexStore</h1>
+
+<p class="subtitle">
+Auto Topup Termurah Terlengkap Dan Tercepat
+</p>
 
 <div class="products">
-<div class="products">
 
+ISI CARD PRODUK DI SINI
+
+</div>
+  
 <div class="card">
 <h2>55 Diamonds</h2>
 <p>Rp 13.414</p>
