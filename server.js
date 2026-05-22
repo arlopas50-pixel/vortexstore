@@ -12,6 +12,31 @@ app.get('/', (req, res) => {
 res.sendFile(path.join(__dirname, 'public', 'index.html'))
 })
 
+app.post('/cek-nickname', async(req,res)=>{
+
+try{
+
+const { userId, serverId } = req.body
+
+const response = await axios.post(
+'https://api.isan.eu.org/nickname/ml',
+{
+userId:userId,
+zoneId:serverId
+}
+)
+
+res.json(response.data)
+
+}catch(err){
+
+res.json({
+success:false
+})
+
+}
+
+})
 app.post('/order', async (req, res) => {
 
 try {
