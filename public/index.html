@@ -557,9 +557,10 @@ return
 document.getElementById('nickname')
 .innerText = 'Nickname: Player ML'
 
-try{
+document.getElementById('loading')
+.style.display = 'block'
 
-alert('Mengirim transaksi...')
+try{
 
 const response = await fetch('/order',{
 
@@ -581,11 +582,17 @@ service:selectedService
 
 const result = await response.json()
 
+document.getElementById('loading')
+.style.display = 'none'
+
 alert(JSON.stringify(result))
 
 closePopup()
 
 }catch(err){
+
+document.getElementById('loading')
+.style.display = 'none'
 
 alert('Server Error')
 
