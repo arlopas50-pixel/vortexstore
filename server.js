@@ -18,8 +18,8 @@ try {
 
 const { userId, serverId, service } = req.body
 
-const apiid = 'FaV5LJPb'
-const apikey = 'bMFChywUboh7CRyPEd7QewgPlJtri6YGDBHdnxR75gmorBN4DleeJL92Lv20uYJz'
+const apiid = 'GLeRF4In'
+const apikey = 'XbjGgWO77xo5SwhHgRGFDBzJwKRuE4xziUp7F5pEGyPlYAaAmLhLBGrnoJQ16azh'
 
 const sign = crypto
 .createHash('md5')
