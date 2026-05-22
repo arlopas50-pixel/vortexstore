@@ -18,8 +18,8 @@ try {
 
 const { userId, serverId, service } = req.body
 
-const apiid = 'ISI_API_ID'
-const apikey = 'ISI_API_KEY'
+const apiid = 'FaV5LJPb'
+const apikey = 'bMFChywUboh7CRyPEd7QewgPlJtri6YGDBHdnxR75gmorBN4DleeJL92Lv20uYJz'
 
 const sign = crypto
 .createHash('md5')
