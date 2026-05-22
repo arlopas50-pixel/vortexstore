@@ -85,6 +85,42 @@ gap:15px;
 </div>
 
 </div>
+<script>
 
+function orderNow(){
+
+const userId = prompt('Masukkan User ID')
+
+if(!userId){
+return
+}
+
+const serverId = prompt('Masukkan Server ID')
+
+if(!serverId){
+return
+}
+
+const confirmBuy = confirm(
+'Beli diamond untuk ID ' 
++ userId + 
+' (' + serverId + ')?'
+)
+
+if(confirmBuy){
+
+alert(
+'Pesanan berhasil dikirim\n\nID: '
++ userId +
+'\nServer: ' +
+serverId
+)
+
+}
+
+}
+
+</script>
+  
 </body>
 </html>
