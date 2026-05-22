@@ -17,13 +17,23 @@ font-family:Arial,sans-serif;
 }
 
 body{
-background:#020b1f;
+background:
+radial-gradient(circle at top right,#1e3a8a 0%,transparent 30%),
+radial-gradient(circle at bottom left,#0f766e 0%,transparent 30%),
+#020617;
 color:white;
 padding:25px;
+min-height:100vh;
+}
+
+/* HEADER */
+
+.header{
+margin-bottom:35px;
 }
 
 .logo{
-font-size:50px;
+font-size:55px;
 margin-bottom:10px;
 }
 
@@ -34,48 +44,103 @@ margin-bottom:10px;
 }
 
 .subtitle{
-font-size:18px;
-color:#d1d5db;
-margin-bottom:35px;
+font-size:17px;
+color:#cbd5e1;
 }
+
+/* SEARCH */
+
+.search-box{
+margin-top:25px;
+}
+
+.search-box input{
+width:100%;
+padding:16px;
+border:none;
+outline:none;
+border-radius:18px;
+background:#0f172a;
+color:white;
+font-size:16px;
+}
+
+/* PRODUCTS */
 
 .products{
 display:grid;
 grid-template-columns:repeat(2,1fr);
-gap:20px;
+gap:18px;
+margin-top:35px;
 }
 
+/* CARD */
+
 .card{
-background:#08142c;
-padding:25px;
-border-radius:20px;
+background:rgba(15,23,42,0.85);
+border:1px solid rgba(255,255,255,0.05);
+padding:22px;
+border-radius:24px;
+backdrop-filter:blur(10px);
+transition:0.3s;
+box-shadow:
+0 0 15px rgba(59,130,246,0.08);
+}
+
+.card:hover{
+transform:translateY(-4px);
+box-shadow:
+0 0 20px rgba(59,130,246,0.2);
 }
 
 .card h2{
 font-size:22px;
-margin-bottom:15px;
+margin-bottom:12px;
 }
 
-.card p{
+.price{
 font-size:20px;
-margin-bottom:20px;
+font-weight:bold;
+color:#60a5fa;
+margin-bottom:18px;
 }
 
-.card button{
+.buy-btn{
 width:100%;
-background:#3b82f6;
-border:none;
 padding:14px;
-border-radius:14px;
+border:none;
+border-radius:16px;
+background:linear-gradient(to right,#3b82f6,#8b5cf6);
 color:white;
-font-size:16px;
+font-size:15px;
 font-weight:bold;
+cursor:pointer;
+transition:0.2s;
 }
+
+.buy-btn:hover{
+opacity:0.9;
+}
+
+/* FOOTER */
+
+.footer{
+margin-top:45px;
+text-align:center;
+color:#94a3b8;
+font-size:14px;
+}
+
+/* MOBILE */
 
 @media(max-width:700px){
 
 .products{
 grid-template-columns:1fr;
+}
+
+.title{
+font-size:34px;
 }
 
 }
@@ -86,6 +151,10 @@ grid-template-columns:1fr;
 
 <body>
 
+<!-- HEADER -->
+
+<div class="header">
+
 <div class="logo">⚡</div>
 
 <div class="title">
@@ -93,66 +162,88 @@ VortexStore
 </div>
 
 <div class="subtitle">
-Auto Topup Termurah Terlengkap Dan Tercepat
+Auto Topup Mobile Legends Murah & Cepat
 </div>
+
+<div class="search-box">
+<input type="text" placeholder="Cari produk...">
+</div>
+
+</div>
+
+<!-- PRODUCTS -->
 
 <div class="products">
 
 <div class="card">
 <h2>55 Diamonds</h2>
-<p>Rp 13.414</p>
+<div class="price">Rp 13.414</div>
 
-<button onclick="orderNow('ML55')">
+<button class="buy-btn"
+onclick="orderNow('ML55')">
 Buy Now
 </button>
 </div>
 
 <div class="card">
 <h2>86 Diamonds</h2>
-<p>Rp 21.153</p>
+<div class="price">Rp 21.153</div>
 
-<button onclick="orderNow('ML86')">
+<button class="buy-btn"
+onclick="orderNow('ML86')">
 Buy Now
 </button>
 </div>
 
 <div class="card">
 <h2>172 Diamonds</h2>
-<p>Rp 41.960</p>
+<div class="price">Rp 41.960</div>
 
-<button onclick="orderNow('ML172')">
+<button class="buy-btn"
+onclick="orderNow('ML172')">
 Buy Now
 </button>
 </div>
 
 <div class="card">
 <h2>257 Diamonds</h2>
-<p>Rp 60.772</p>
+<div class="price">Rp 60.772</div>
 
-<button onclick="orderNow('ML257')">
+<button class="buy-btn"
+onclick="orderNow('ML257')">
 Buy Now
 </button>
 </div>
 
 <div class="card">
 <h2>565 Diamonds</h2>
-<p>Rp 132.413</p>
+<div class="price">Rp 132.413</div>
 
-<button onclick="orderNow('ML565')">
+<button class="buy-btn"
+onclick="orderNow('ML565')">
 Buy Now
 </button>
 </div>
 
 <div class="card">
 <h2>706 Diamonds</h2>
-<p>Rp 165.085</p>
+<div class="price">Rp 165.085</div>
 
-<button onclick="orderNow('ML706')">
+<button class="buy-btn"
+onclick="orderNow('ML706')">
 Buy Now
 </button>
 </div>
 
 </div>
+
+<!-- FOOTER -->
+
+<div class="footer">
+© 2025 VortexStore — Powered By VIP Reseller
+</div>
+
+<!-- SCRIPT -->
 
 <script>
 
