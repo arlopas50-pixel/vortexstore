@@ -261,9 +261,32 @@ if(!serverId){
 return
 }
 
-alert('Mengirim pesanan...')
+alert('Mengecek nickname...')
 
 try{
+
+const check = await fetch('/cek-nickname',{
+
+method:'POST',
+
+headers:{
+'Content-Type':'application/json'
+},
+
+body:JSON.stringify({
+
+userId:userId,
+serverId:serverId
+
+})
+
+})
+
+const nick = await check.json()
+
+alert(
+'Nickname: ' + nick.nickname
+)
 
 const response = await fetch('/order',{
 
@@ -296,6 +319,5 @@ alert('Server Error')
 }
 
 </script>
-
 </body>
 </html>
