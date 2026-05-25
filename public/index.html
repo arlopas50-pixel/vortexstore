@@ -9,6 +9,25 @@
 
 <style>
 
+.result-box{
+display:none;
+margin-top:15px;
+padding:15px;
+border-radius:14px;
+text-align:center;
+font-weight:bold;
+}
+
+.success{
+background:#064e3b;
+color:#6ee7b7;
+}
+
+.failed{
+background:#7f1d1d;
+color:#fca5a5;
+}
+
 .loading{
 display:none;
 margin-top:15px;
@@ -495,6 +514,10 @@ Nickname: -
 Memproses transaksi...
 </div>
 
+<div class="result-box" id="resultBox">
+Status transaksi
+</div>
+
 <button onclick="submitOrder()">
 Checkout
 </button>
@@ -586,6 +609,35 @@ document.getElementById('loading')
 .style.display = 'none'
 
 alert(JSON.stringify(result))
+
+const resultBox =
+document.getElementById('resultBox')
+
+resultBox.style.display = 'block'
+
+if(
+result.result == true ||
+result.success == true
+){
+
+resultBox.className =
+'result-box success'
+
+resultBox.innerText =
+'✅ Transaksi Berhasil'
+
+}else{
+
+resultBox.className =
+'result-box failed'
+
+resultBox.innerText =
+'❌ ' + (
+result.message ||
+'Transaksi Gagal'
+)
+
+}
 
 closePopup()
 
