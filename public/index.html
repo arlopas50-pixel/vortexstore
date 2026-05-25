@@ -9,6 +9,56 @@
 
 <style>
 
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+overflow-x:hidden;
+min-height:100vh;
+display:flex;
+flex-direction:column;
+}
+
+.products{
+display:grid;
+grid-template-columns:
+repeat(auto-fit,minmax(150px,1fr));
+
+gap:15px;
+
+min-height:700px;
+
+align-content:start;
+}
+
+.card{
+width:100%;
+overflow:hidden;
+}
+
+.popup-box{
+width:90%;
+max-width:400px;
+margin:auto;
+}
+
+.popup-box input{
+width:100%;
+max-width:100%;
+}
+
+.popup-box button{
+width:100%;
+max-width:100%;
+}
+
+.footer{
+margin-top:auto;
+}
+
 .game-grid{
 
 display:grid;
