@@ -76,6 +76,16 @@ message: err.message
 
 })
 
+app.post('/nickname', async(req,res)=>{
+
+const { userId, serverId } = req.body
+
+res.json({
+nickname:"Player ML"
+})
+
+})
+
 app.listen(process.env.PORT || 3000, () => {
 console.log('Server running')
 })
