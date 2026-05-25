@@ -277,206 +277,7 @@ Auto Topup Mobile Legends Murah & Cepat
 
 <!-- PRODUCTS -->
 
-<div class="products">
-
-<div class="card">
-<h2>55 Diamonds</h2>
-<div class="price">Rp 14.500</div>
-
-<button class="buy-btn"
-onclick="orderNow(
-'MLGLOBAL22590-S14',
-'55 Diamonds',
-'Rp 14.500'
-)">
-Buy Now
-</button>
-</div>
-
-<div class="card">
-<h2>86 Diamonds</h2>
-<div class="price">Rp 23.500</div>
-
-<button class="buy-btn"
-onclick="orderNow(
-'MLGLOBAL13-S14',
-'86 Diamonds',
-'Rp 23.500'
-)">
-Buy Now
-</button>
-</div>
-
-<div class="card">
-<h2>165 Diamonds</h2>
-<div class="price">Rp 42.500</div>
-
-<button class="buy-btn"
-onclick="orderNow(
-'MLGLOBAL22591-S14',
-'165 Diamonds',
-'Rp 42.500'
-)">
-Buy Now
-</button>
-</div>
-
-<div class="card">
-<h2>172 Diamonds</h2>
-<div class="price">Rp 44.500</div>
-
-<button class="buy-btn"
-onclick="orderNow(
-'MLGLOBAL23-S14',
-'172 Diamonds',
-'Rp 44.500'
-)">
-Buy Now
-</button>
-</div>
-
-<div class="card">
-<h2>257 Diamonds</h2>
-<div class="price">Rp 62.500</div>
-
-<button class="buy-btn"
-onclick="orderNow(
-'MLGLOBAL25-S14',
-'257 Diamonds',
-'Rp 62.500'
-)">
-Buy Now
-</button>
-</div>
-
-<div class="card">
-<h2>275 Diamonds</h2>
-<div class="price">Rp 66.500</div>
-
-<button class="buy-btn"
-onclick="orderNow(
-'MLGLOBAL22592-S14',
-'275 Diamonds',
-'Rp 66.500'
-)">
-Buy Now
-</button>
-</div>
-
-<div class="card">
-<h2>565 Diamonds</h2>
-<div class="price">Rp 135.500</div>
-
-<button class="buy-btn"
-onclick="orderNow(
-'MLGLOBAL22593-S14',
-'565 Diamonds',
-'Rp 135.500'
-)">
-Buy Now
-</button>
-</div>
-
-
-
-<div class="card">
-<h2>706 Diamonds</h2>
-<div class="price">Rp 165.085</div>
-
-<button class="buy-btn"
-onclick="orderNow(
-'MLGLOBAL26-S14',
-'706 Diamonds',
-'Rp 167.500'
-)">
-Buy Now
-</button>
-</div>
-
-<div class="card">
-<h2>2195 Diamonds</h2>
-<div class="price">Rp 501.500</div>
-
-<button class="buy-btn"
-onclick="orderNow(
-'MLGLOBAL27-S14',
-'2195 Diamonds',
-'Rp 501.500'
-)">
-Buy Now
-</button>
-</div>
-
-<div class="card">
-<h2>3688 Diamonds</h2>
-<div class="price">Rp 835.500</div>
-
-<button class="buy-btn"
-onclick="orderNow(
-'MLGLOBAL28-S14',
-'3688 Diamonds',
-'Rp 835.500'
-)">
-Buy Now
-</button>
-</div>
-
-<div class="card">
-<h2>5532 Diamonds</h2>
-<div class="price">Rp 1.260.500</div>
-
-<button class="buy-btn"
-onclick="orderNow(
-'MLGLOBAL29-S14',
-'5532 Diamonds',
-'Rp 1.260.500'
-)">
-Buy Now
-</button>
-</div>
-
-<div class="card">
-<h2>9288 Diamonds</h2>
-<div class="price">Rp 2.092.500</div>
-
-<button class="buy-btn"
-onclick="orderNow(
-'MLGLOBAL30-S14',
-'9288 Diamonds',
-'Rp 2.092.500'
-)">
-Buy Now
-</button>
-</div>
-  
-<div class="card">
-<h2>Twilight Pass</h2>
-<div class="price">Rp 140.500</div>
-
-<button class="buy-btn"
-onclick="orderNow(
-'MLGLOBAL33-S14',
-'Twilight Pass',
-'Rp 140.500'
-)">
-Buy Now
-</button>
-</div>
-
-<div class="card">
-<h2>Weekly Diamond Pass</h2>
-<div class="price">Rp 28.000</div>
-
-<button class="buy-btn"
-onclick="orderNow(
-'MLGLOBAL16642-S14',
-'Weekly Diamond Pass',
-'Rp 28.000'
-)">
-Buy Now
-</button>
-
-</div>
+<div class="products" id="productList"></div>
 
 <!-- FOOTER -->
 
@@ -534,6 +335,160 @@ Tutup
 </div>
   
 <script>
+
+const products = [
+
+{
+  code: "MLA3-S13",
+  name: "3 Diamonds",
+  price: "Rp 1.030"
+},
+
+{
+  code: "MLA5-S13",
+  name: "5 Diamonds",
+  price: "Rp 1.452"
+},
+
+{
+  code: "MLA10-S13",
+  name: "10 Diamonds",
+  price: "Rp 2.904"
+},
+
+{
+  code: "MLA12-S13",
+  name: "12 Diamonds",
+  price: "Rp 3.387"
+},
+
+{
+  code: "MLA15-S13",
+  name: "15 Diamonds",
+  price: "Rp 4.353"
+},
+
+{
+  code: "MLA17-S13",
+  name: "17 Diamonds",
+  price: "Rp 4.578"
+},
+
+{
+  code: "MLA19-S13",
+  name: "19 Diamonds",
+  price: "Rp 5.314"
+},
+
+{
+  code: "MLA22-S13",
+  name: "22 Diamonds",
+  price: "Rp 6.296"
+},
+
+{
+  code: "MLA28-S13",
+  name: "28 Diamonds",
+  price: "Rp 7.724"
+},
+
+{
+  code: "MLA36-S13",
+  name: "36 Diamonds",
+  price: "Rp 9.690"
+},
+
+{
+  code: "MLA44-S13",
+  name: "44 Diamonds",
+  price: "Rp 11.552"
+},
+
+{
+  code: "MLA59-S13",
+  name: "59 Diamonds",
+  price: "Rp 15.449"
+},
+
+{
+  code: "MLA85-S13",
+  name: "85 Diamonds",
+  price: "Rp 22.198"
+},
+
+{
+  code: "MLAWDP1X-S13",
+  name: "Weekly Diamond Pass",
+  price: "Rp 27.967"
+},
+
+{
+  code: "MLA113-S13",
+  name: "113 Diamonds",
+  price: "Rp 29.823"
+},
+
+{
+  code: "MLA170-S13",
+  name: "170 Diamonds",
+  price: "Rp 44.229"
+},
+
+{
+  code: "MLA240-S13",
+  name: "240 Diamonds",
+  price: "Rp 62.330"
+},
+
+{
+  code: "MLA568-S13",
+  name: "568 Diamonds",
+  price: "Rp 144.696"
+},
+
+{
+  code: "MLA716-S13",
+  name: "716 Diamonds",
+  price: "Rp 182.766"
+},
+
+{
+  code: "MLA1000-S13",
+  name: "1000 Diamonds",
+  price: "Rp 248.436"
+}
+
+]
+
+const productContainer = document.querySelector(".products")
+
+products.forEach(product => {
+
+productContainer.innerHTML += `
+
+<div class="card">
+
+<h2>${product.name}</h2>
+
+<div class="price">
+${product.price}
+</div>
+
+<button
+class="buy-btn"
+onclick="orderNow(
+'${product.code}',
+'${product.name}',
+'${product.price}'
+)">
+Buy Now
+</button>
+
+</div>
+
+`
+
+})
 
 let selectedService = ''
 let selectedPrice = ''
