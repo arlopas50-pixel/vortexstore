@@ -9,6 +9,17 @@
 
 <style>
 
+#nicknameBox{
+
+margin-top:10px;
+padding:10px;
+background:#111827;
+border-radius:10px;
+color:#00ff99;
+font-size:14px;
+
+}
+
 .result-box{
 display:none;
 margin-top:15px;
@@ -303,14 +314,14 @@ Rp 0
 <input
 type="text"
 id="userId"
-placeholder="Masukkan User ID">
+onkeyup="checkNickname()">
 
 <input
 type="text"
 id="serverId"
-placeholder="Masukkan Server ID">
+onkeyup="checkNickname()">
 
-<div class="nickname" id="nickname">
+<div id="nicknameBox">
 Nickname: -
 </div>
 
@@ -336,6 +347,53 @@ Tutup
 </div>
   
 <script>
+
+async function checkNickname(){
+
+const userId =
+document.getElementById("userId").value
+
+const serverId =
+document.getElementById("serverId").value
+
+if(userId.length < 5) return
+
+try{
+
+const response =
+await fetch('/nickname',{
+
+method:'POST',
+
+headers:{
+'Content-Type':'application/json'
+},
+
+body:JSON.stringify({
+userId,
+serverId
+})
+
+})
+
+const data = await response.json()
+
+document.getElementById(
+'nicknameBox'
+).innerHTML =
+'Nickname: ' + data.nickname
+
+}catch(err){
+
+document.getElementById(
+'nicknameBox'
+).innerHTML =
+'Nickname tidak ditemukan'
+
+}
+
+}
+
 
 const products = [
 
