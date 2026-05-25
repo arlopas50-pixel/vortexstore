@@ -9,6 +9,64 @@
 
 <style>
 
+.game-grid{
+
+display:grid;
+grid-template-columns:
+repeat(2,1fr);
+
+gap:15px;
+margin-bottom:25px;
+
+}
+
+.game-card{
+
+position:relative;
+border-radius:18px;
+overflow:hidden;
+cursor:pointer;
+transition:0.3s;
+background:#111827;
+
+}
+
+.game-card:hover{
+
+transform:scale(1.03);
+
+}
+
+.game-card img{
+
+width:100%;
+height:140px;
+object-fit:cover;
+display:block;
+
+}
+
+.game-name{
+
+position:absolute;
+bottom:0;
+left:0;
+right:0;
+
+padding:10px;
+
+background:
+linear-gradient(
+transparent,
+rgba(0,0,0,0.9)
+);
+
+color:white;
+font-weight:bold;
+font-size:15px;
+
+}
+
 .game-menu{
 
 display:flex;
@@ -322,18 +380,40 @@ onkeyup="searchProducts()">
 <!-- PRODUCTS -->
 
 <div class="game-menu">
+<div class="game-grid">
 
-<button onclick="loadGame('ml')">
+<div class="game-card"
+onclick="loadGame('ml')">
+
+<img src="https://i.imgur.com/6kKx6mD.jpeg">
+
+<div class="game-name">
 Mobile Legends
-</button>
+</div>
 
-<button onclick="loadGame('ff')">
+</div>
+
+<div class="game-card"
+onclick="loadGame('ff')">
+
+<img src="https://i.imgur.com/8w6R6tM.jpeg">
+
+<div class="game-name">
 Free Fire
-</button>
+</div>
 
-<button onclick="loadGame('pubg')">
-PUBG
-</button>
+</div>
+
+<div class="game-card"
+onclick="loadGame('pubg')">
+
+<img src="https://i.imgur.com/rN4xF6F.jpeg">
+
+<div class="game-name">
+PUBG Mobile
+</div>
+
+</div>
 
 </div>
 
