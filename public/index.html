@@ -550,17 +550,25 @@ Mobile Legends
 Rp 0
 </div>
 
+<div id="serverBox">
+
 <input
 type="text"
-id="userId"
+id="UserId"
 placeholder="Masukkan User ID"
 onkeyup="checkNickname()">
+
+</div>
+
+<div id="serverBox">
 
 <input
 type="text"
 id="serverId"
 placeholder="Masukkan Server ID"
 onkeyup="checkNickname()">
+
+</div>
 
 <div id="nicknameBox">
 Nickname: -
@@ -636,6 +644,7 @@ document.getElementById(
 }
 
 
+let currentGame = ''
 const games = {
 
 ml:[
@@ -691,6 +700,8 @@ price:"Rp 15.000"
 const productContainer = document.querySelector(".products")
 
 function loadGame(game){
+
+currentGame = game
 
 const productContainer =
 document.getElementById("products")
@@ -768,6 +779,19 @@ selectedPrice = price
 
 document.getElementById('popup')
 .style.display = 'flex'
+
+const serverBox =
+document.getElementById('serverBox')
+
+if(currentGame === 'ml'){
+
+serverBox.style.display = 'block'
+
+}else{
+
+serverBox.style.display = 'none'
+
+}
 
 document.getElementById('productName')
 .innerText = product
