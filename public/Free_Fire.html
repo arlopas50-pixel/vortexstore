@@ -577,16 +577,6 @@ onkeyup="checkNickname()">
 
 </div>
 
-<div id="serverBox">
-
-<input
-type="text"
-id="serverId"
-placeholder="Masukkan Server ID"
-onkeyup="checkNickname()">
-
-</div>
-
 <div id="nicknameBox">
 Nickname: -
 </div>
@@ -618,9 +608,6 @@ async function checkNickname(){
 
 const userId =
 document.getElementById("userId").value
-
-const serverId =
-document.getElementById("serverId").value
 
 if(userId.length < 5) return
 
@@ -836,10 +823,7 @@ async function submitOrder(){
 const userId =
 document.getElementById('userId').value
 
-const serverId =
-document.getElementById('serverId').value
-
-if(!userId || !serverId){
+if(!userId){
 
 alert('Lengkapi data')
 
