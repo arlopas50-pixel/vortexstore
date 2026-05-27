@@ -571,7 +571,7 @@ Rp 0
 
 <input
 type="text"
-id="UserId"
+id="userId"
 placeholder="Masukkan User ID"
 onkeyup="checkNickname()">
 
@@ -623,8 +623,7 @@ headers:{
 },
 
 body:JSON.stringify({
-userId,
-serverId
+userId
 })
 
 })
@@ -732,14 +731,12 @@ ${product.harga}
 
 <button class="buy-btn"
 onclick="orderNow(
-'${product.service}',
-'${product.name}',
-'${product.price}'
+'${product.kode}',
+'${product.nama}',
+'${product.harga}'
 )">
 Buy Now
 </button>
-
-</div>
 
 `
 
@@ -850,7 +847,6 @@ headers:{
 body:JSON.stringify({
 
 userId:userId,
-serverId:serverId,
 service:selectedService
 
 })
