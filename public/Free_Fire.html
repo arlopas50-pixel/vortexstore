@@ -572,6 +572,8 @@ Top Up Diamond Free Fire Murah & Cepat
 
 <!-- SCRIPT -->
 
+<div class="popup" id="popup">
+
 <div class="popup-box">
 
 <h2 id="productName">Product</h2>
@@ -729,8 +731,6 @@ const productContainer = document.querySelector(".products")
 
 function loadGame(game){
 
-currentGame = game
-
 const productContainer =
 document.getElementById("products")
 
@@ -756,6 +756,8 @@ onclick="orderNow(
 )">
 Buy Now
 </button>
+
+</div>
 
 `
 
@@ -847,8 +849,8 @@ return
 
 }
 
-document.getElementById('nickname')
-.innerText = 'Nickname: Player ML'
+document.getElementById('nicknameBox')
+.innerText = 'Nickname: Player FF'
 
 document.getElementById('loading')
 .style.display = 'block'
