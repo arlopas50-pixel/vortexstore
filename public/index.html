@@ -852,7 +852,12 @@ margin-top:20px;
 
 .event-card{
 
-background:#111827;
+background:
+linear-gradient(
+145deg,
+#111827,
+#1e293b
+);
 
 padding:18px;
 
@@ -862,6 +867,34 @@ box-shadow:
 0 0 20px rgba(59,130,246,0.12);
 
 transition:0.3s;
+
+border:
+1px solid rgba(255,255,255,0.05);
+
+position:relative;
+
+overflow:hidden;
+
+}
+
+.event-card::before{
+
+content:"";
+
+position:absolute;
+
+width:120px;
+height:120px;
+
+background:
+rgba(59,130,246,0.15);
+
+border-radius:50%;
+
+top:-40px;
+right:-40px;
+
+filter:blur(35px);
 
 }
 
