@@ -764,90 +764,53 @@ color:#6b7280;
 }
 
 .promo-banner{
+.promo-banner{
 
-position:relative;
-
-width:100%;
 height:220px;
 
 border-radius:24px;
 
-overflow:hidden;
-
 margin-top:20px;
-
-box-shadow:
-0 0 30px rgba(59,130,246,0.2);
-
-}
-
-.promo-banner img{
-
-width:100%;
-height:100%;
-
-object-fit:cover;
-
-display:block;
-
-}
-
-.promo-overlay{
-
-position:absolute;
-
-top:0;
-left:0;
-
-width:100%;
-height:100%;
-
-display:flex;
-
-flex-direction:column;
-
-justify-content:center;
 
 padding:25px;
 
+display:flex;
+
+align-items:center;
+
 background:
 linear-gradient(
-90deg,
-rgba(2,6,23,0.65),
-rgba(2,6,23,0.15)
+135deg,
+#0f172a,
+#1e3a8a
 );
 
-z-index:2;
-
-position:relative;
-
-overflow:hidden;
+box-shadow:
+0 0 25px rgba(59,130,246,0.25);
 
 }
 
-.promo-overlay h1{
+.promo-content h1{
 
 color:white;
 
-font-size:28px;
+font-size:30px;
 
 margin-bottom:10px;
 
 }
 
-.promo-overlay p{
+.promo-content p{
 
 color:#cbd5e1;
 
-margin-bottom:18px;
-
-font-size:15px;
+margin-bottom:20px;
 
 }
 
-.promo-overlay a{
+.promo-content a{
 
-width:max-content;
+display:inline-block;
 
 padding:10px 18px;
 
@@ -865,7 +828,7 @@ transition:0.3s;
 
 }
 
-.promo-overlay a:hover{
+.promo-content a:hover{
 
 background:#2563eb;
 
@@ -927,17 +890,11 @@ onkeyup="searchProducts()">
 
 <div class="promo-banner">
 
-<img src="ml.jpg">
+<div class="promo-content">
 
-<div class="promo-overlay">
+<h1>🔥 MLBB EVENT</h1>
 
-<h1>
-🔥 MLBB EVENT
-</h1>
-
-<p>
-Bonus Diamond hingga 20%
-</p>
+<p>Bonus Diamond hingga 20%</p>
 
 <a href="Mobile_Legends.html">
 Topup Sekarang
