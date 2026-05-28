@@ -8,16 +8,26 @@ justify-content:space-between;
 
 align-items:center;
 
-padding:15px 0;
+padding:16px 20px;
 
-flex-wrap:wrap;
+background:rgba(8,15,40,0.95);
+
+position:sticky;
+
+top:0;
+
+z-index:1000;
+
+backdrop-filter:blur(10px);
 
 }
 
-.nav-logo{
+.logo{
 
-font-size:17px;
-font-weight:bold;
+font-size:28px;
+
+font-weight:700;
+
 color:white;
 
 }
@@ -26,31 +36,27 @@ color:white;
 
 display:flex;
 
-gap:16px;
-
-align-items:center;
-
-flex-wrap:wrap;
+gap:18px;
 
 }
 
-nav a{
-
-font-size:16px;
-
-font-weight:600;
+.nav-menu a{
 
 color:white;
 
 text-decoration:none;
 
+font-size:16px;
+
+font-weight:600;
+
 transition:0.3s;
 
 }
 
-nav a:hover{
+.nav-menu a:hover{
 
-color:white;
+color:#4da6ff;
 
 }
 
