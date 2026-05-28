@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VortexStore</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #020617 0%, #0f172a 50%, #1e3a8a 100%);
+            color: white;
+            padding: 20px;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        /* NAVBAR */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 15px;
+            flex-wrap: wrap;
+            padding: 15px 20px;
+            background: rgba(15, 23, 42, 0.85);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+            z-index: 9999;
+        }
+
+        .nav-logo {
+            font-size: 17px;
+            font-weight: bold;
+            color: #60a5fa;
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .nav-menu a {
+            color: #cbd5e1;
+            text-decoration: none;
+            font-size: 14px;
+            transition: 0.3s;
+        }
+
+        .nav-menu a:hover {
+            color: #60a5fa;
+        }
+
+        /* HEADER */
+        .header {
+            margin-top: 90px;
+            margin-bottom: 30px;
+            text-align: left;
+        }
+
+        .logo {
+            font-size: 50px;
+            margin-bottom: 8px;
+        }
+
+        .title {
+            font-size: 36px;
+            font-weight: bold;
+            margin-bottom: 8px;
+            background: linear-gradient(90deg, #60a5fa, #8b5cf6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .subtitle {
+            font-size: 16px;
+            color: #94a3b8;
+        }
+
+        /* SEARCH BOX */
+        .search-box {
+            margin-top: 20px;
+        }
+
+        .search-box input {
+            width: 100%;
+            padding: 15px 20px;
+            border: none;
+            outline: none;
+            border-radius: 15px;
+            background: rgba(15, 23, 42, 0.7);
+            border: 1px solid rgba(96, 165, 250, 0.2);
+            color: white;
+            font-size: 15px;
+        }
+
+        /* HERO BANNER */
+        .hero-banner {
+            border-radius: 20px;
+            overflow: hidden;
+            margin-bottom: 25px;
+            background: linear-gradient(135deg, #1e3a8a, #3b82f6);
+            box-shadow: 0 8px 25px rgba(59, 130, 246, 0.3);
+        }
+
+        .promo-banner {
+            padding: 25px;
+        }
+
+        .promo-content h1 {
+            font-size: 26px;
+            margin-bottom: 8px;
+        }
+
+        .promo-content p {
+            font-size: 15px;
+            color: #dbeafe;
+            margin-bottom: 15px;
+        }
+
+        .promo-content a {
+            padding: 10px 20px;
+            background: white;
+            color: #1e3a8a !important;
+            text-decoration: none;
+            border-radius: 10px;
+            font-weight: bold;
+            font-size: 14px;
+            display: inline-block;
+        }
+
+        /* MINI EVENT */
+        .mini-event {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 12px;
+            margin-bottom: 30px;
+        }
+
+        .event-card {
+            background: rgba(15, 23, 42, 0.6);
+            border: 1px solid rgba(255,255,255,0.05);
+            padding: 18px;
+            border-radius: 15px;
+            backdrop-filter: blur(8px);
+        }
+
+        .event-card h3 {
+            font-size: 16px;
+            margin-bottom: 5px;
+            color: #f8fafc;
+        }
+
+        .event-card p {
+            font-size: 13px;
+            color: #94a3b8;
+        }
+
+        /* GAME GRID */
+        .game-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 18px;
+            margin-bottom: 35px;
+        }
+
+        .game-card {
+            position: relative;
+            height: 160px;
+            border-radius: 18px;
+            overflow: hidden;
+            cursor: pointer;
+            background: #111827;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .game-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.85;
+        }
+
+        .game-name {
+            position: absolute;
+            bottom: 15px;
+            left: 15px;
+            font-size: 18px;
+            font-weight: bold;
+            text-shadow: 0 2px 8px rgba(0,0,0,0.8);
+            color: white;
+        }
+
+        /* FEATURES */
+        .features {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 12px;
+            margin-bottom: 35px;
+        }
+
+        .feature-box {
+            background: rgba(15, 23, 42, 0.6);
+            border: 1px solid rgba(255,255,255,0.05);
+            padding: 20px;
+            border-radius: 15px;
+            text-align: center;
+        }
+
+        .feature-box h3 {
+            font-size: 16px;
+            margin-bottom: 6px;
+            color: #60a5fa;
+        }
+
+        .feature-box p {
+            font-size: 13px;
+            color: #94a3b8;
+        }
+
+        /* PRODUCTS */
+        .products {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 15px;
+            margin-bottom: 40px;
+        }
+
+        .card {
+            background: rgba(15, 23, 42, 0.7);
+            border: 1px solid rgba(96, 165, 250, 0.15);
+            padding: 20px;
+            border-radius: 18px;
+            backdrop-filter: blur(10px);
+        }
+
+        .card h2 {
+            font-size: 20px;
+            margin-bottom: 8px;
+        }
+
+        .price {
+            font-size: 18px;
+            font-weight: bold;
+            color: #4ade80;
+            margin-bottom: 15px;
+        }
+
+        .buy-btn {
+            width: 100%;
+            padding: 12px;
+            border: none;
+            border-radius: 12px;
+            background: linear-gradient(90deg, #3b82f6, #8b5cf6);
+            color: white;
+            font-weight: bold;
+            font-size: 15px;
+            cursor: pointer;
+        }
+
+        /* POPUP */
+        .popup {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.85);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            z-index: 99999;
+        }
+
+        .popup-box {
+            background: #0f172a;
+            width: 100%;
+            max-width: 380px;
+            padding: 25px;
+            border-radius: 20px;
+            border: 1px solid #3b82f6;
+        }
+
+        .popup-box h2 {
+            font-size: 22px;
+            margin-bottom: 8px;
+        }
+
+        .product-price {
+            font-size: 20px;
+            font-weight: bold;
+            color: #4ade80;
+            margin-bottom: 20px;
+        }
+
+        .popup-box input {
+            width: 100%;
+            padding: 14px;
+            border: none;
+            border-radius: 10px;
+            background: #1e293b;
+            color: white;
+            font-size: 15px;
+            margin-bottom: 12px;
+        }
+
+        #nicknameBox {
+            padding: 10px;
+            background: #111827;
+            border-radius: 8px;
+            color: #00ff99;
+            font-size: 14px;
+            margin-bottom: 12px;
+        }
+
+        .loading {
+            display: none;
+            padding: 12px;
+            background: #1e293b;
+            border-radius: 8px;
+            text-align: center;
+            color: #60a5fa;
+            margin-bottom: 12px;
+        }
+
+        .result-box {
+            display: none;
+            padding: 12px;
+            border-radius: 8px;
+            text-align: center;
+            font-weight: bold;
+            margin-bottom: 12px;
+        }
+
+        .success { background: #064e3b; color: #6ee7b7; }
+        .failed { background: #7f1d1d; color: #fca5a5; }
+
+        .popup-box button {
+            width: 100%;
+            padding: 12px;
+            border: none;
+            border-radius: 10px;
+            background: linear-gradient(90deg, #3b82f6, #8b5cf6);
+            color: white;
+            font-weight: bold;
+            font-size: 15px;
+            margin-bottom: 8px;
+        }
+
+        .close-btn {
+            background: #ef4444;
+        }
+
+        /* FOOTER */
+        .footer {
+            margin-top: 40px;
+            padding: 30px 20px;
+            background: rgba(15, 23, 42, 0.8);
+            border-radius: 20px 20px 0 0;
+            text-align: center;
+        }
+
+        .footer h2 {
+            font-size: 20px;
+            margin-bottom: 8px;
+            color: #60a5fa;
+        }
+
+        .footer p {
+            font-size: 14px;
+            color: #94a3b8;
+            margin-bottom: 15px;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-bottom: 15px;
+        }
+
+        .footer-links a {
+            padding: 8px 15px;
+            background: #1e293b;
+            border-radius: 8px;
+            color: white;
+            text-decoration: none;
+            font-size: 13px;
+        }
+
+        .copyright {
+            font-size: 12px;
+            color: #64748b;
+        }
+
+        /* RESPONSIVE */
+        @media (min-width: 768px) {
+            .mini-event, .features { grid-template-columns: repeat(3, 1fr); }
+            .game-grid, .products { grid-template-columns: repeat(2, 1fr); }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <div class="navbar">
+        <div class="nav-logo">⚡ VortexStore</div>
+        <div class="nav-menu">
+            <a href="index.html">Home</a>
+            <a href="#">Topup Game</a>
+            <a href="#">Cek Transaksi</a>
+            <a href="#">Contact</a>
+        </div>
+    </div>
+
+    <!-- HEADER -->
+    <div class="header">
+        <div class="logo">⚡</div>
+        <div class="title">VortexStore</div>
+        <div class="subtitle">Auto Topup All Games Murah & Cepat</div>
+        <div class="search-box">
+            <input type="text" id="searchInput" placeholder="Cari produk..." onkeyup="searchProducts()">
+        </div>
+    </div>
+
+    <!-- HERO BANNER -->
+    <div class="hero-banner">
+        <div class="promo-banner">
+            <div class="promo-content">
+                <h1>🔥 MLBB EVENT</h1>
+                <p>Bonus Diamond hingga 20% Khusus Hari Ini!</p>
+                <a href="Mobile_Legends.html">Topup Sekarang</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- MINI EVENT -->
+    <div class="mini-event">
+        <div class="event-card">
+            <h3>🔥 Weekly Promo</h3>
+            <p>Diskon topup mingguan harga miring</p>
+        </div>
+        <div class="event-card">
+            <h3>🎁 Bonus Diamond</h3>
+            <p>Bonus item menarik setiap event besar</p>
+        </div>
+        <div class="event-card">
+            <h3>⚡ Fast Delivery</h3>
+            <p>Proses cepat & otomatis 24 jam nonstop</p>
+        </div>
+    </div>
+
+    <!-- GAME GRID -->
+    <div class="game-grid">
+        <div class="game-card" onclick="window.location.href='Mobile_Legends.html'">
+            <img src="https://i.imgur.com/6Zk7yQk.jpg" alt="Mobile Legends">
+            <div class="game-name">Mobile Legends</div>
+        </div>
+        <div class="game-card" onclick="window.location.href='Free_Fire.html'">
+            <img src="https://i.imgur.com/9gV0k8b.jpg" alt="Free Fire">
+            <div class="game-name">Free Fire</div>
+        </div>
+        <div class="game-card" onclick="window.location.href='PUBG.html'">
+            <img src="https://i.imgur.com/3qX2yRv.jpg" alt="PUBG Mobile">
+            <div class="game-name">PUBG Mobile</div>
+        </div>
+    </div>
+
+    <!-- FEATURES -->
+    <section class="features">
+        <div class="feature-box">
+            <h3>⚡ Fast Process</h3>
+            <p>Proses otomatis cepat & instan masuk</p>
+        </div>
+        <div class="feature-box">
+            <h3>🔒 Secure Payment</h3>
+            <p>Pembayaran aman & terpercaya 100%</p>
+        </div>
+        <div class="feature-box">
+            <h3>🌙 Online 24 Jam</h3>
+            <p>Topup kapan saja tanpa batas waktu</p>
+        </div>
+    </section>
+
+    <!-- PRODUCTS LIST -->
+    <div class="products" id="products"></div>
+
+    <!-- POPUP MODAL -->
+    <div class="popup" id="popup">
+        <div class="popup-box">
+            <h2 id="productName"></h2>
+            <div class="product-price" id="productPrice"></div>
+
+            <div>
+                <input type="text" id="userId" placeholder="Masukkan User ID" onkeyup="checkNickname()">
+            </div>
+            <div id="serverBox" style="display: none;">
+                <input type="text" id="serverId" placeholder="Masukkan Server ID" onkeyup="checkNickname()">
+            </div>
+
+            <div id="nicknameBox">Nickname: -</div>
+            <div class="loading" id="loading">Memproses transaksi...</div>
+            <div class="result-box" id="resultBox">Status transaksi</div>
+
+            <button onclick="submitOrder()">Checkout Sekarang</button>
+            <button class="close-btn" onclick="closePopup()">Tutup</button>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <h2>⚡ VortexStore</h2>
+        <p>Topup Game Murah, Cepat & Otomatis Terpercaya</p>
+        <div class="footer-links">
+            <a href="#">📱 Whatsapp</a>
+            <a href="#">📸 Instagram</a>
+            <a href="#">🎧 Support</a>
+        </div>
+        <p class="copyright">© 2025 VortexStore - All Rights Reserved</p>
+    </footer>
+  
+    <script>
+        async function checkNickname() {
+            const userId = document.getElementById("userId").value;
+            const serverId = document.getElementById("serverId").value;
+            if(userId.length < 5) return;
+            try {
+                const response = await fetch('/nickname', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ userId, serverId })
+                });
+                const data = await response.json();
+                document.getElementById('nicknameBox').innerHTML = 'Nickname: ' + (data.nickname || 'Tidak ditemukan');
+            } catch(err) {
+                document.getElementById('nicknameBox').innerHTML = 'Nickname tidak ditemukan';
+            }
+        }
+
+        let currentGame = '';
+        const games = {
+            ml: [
+                { service:"MLA3-S13", name:"3 Diamonds", price:"Rp 1.030" },
+                { service:"MLA5-S13", name:"5 Diamonds", price:"Rp 1.452" },
+                { service:"MLA10-S13", name:"10 Diamonds", price:"Rp 2.904" }
+            ],
+            ff: [
+                { service:"FF5", name:"5 Diamonds FF", price:"Rp 1.000" },
+                { service:"FF12", name:"12 Diamonds FF", price:"Rp 2.000" }
+            ],
+            pubg: [
+                { kode:'PUBG60', nama:'60 UC', harga:'Rp 15.000' },
+                { kode:'PUBG325', nama:'325 UC', harga:'Rp 75.000' },
+                { kode:'PUBG660', nama:'660 UC', harga:'Rp 150.000' }
+            ]
+        };
+
+        function loadGame(game) {
+            currentGame = game;
+            const productContainer = document.getElementById("products");
+            productContainer.innerHTML = "";
+            games[game].forEach(product => {
+                productContainer.innerHTML += `
+                <div class="card">
+                    <h2>${product.name || product.nama}</h2>
+                    <div class="price">${product.price || product.harga}</div>
+                    <button class="buy-btn" onclick="orderNow('${product.service || product.kode}', '${product.name || product.nama}', '${product.price || product.harga}')">
+                        Buy Now
+                    </button>
+                </div>`;
+            });
+        }
+
+        function searchProducts() {
+            const input = document.getElementById("searchInput").value.toLowerCase();
+            const cards = document.querySelectorAll(".card");
+            cards.forEach(card => {
+                const text = card.innerText.toLowerCase();
+                card.style.display = text.includes(input) ? "block" : "none";
+            });
+        }
+
+        let selectedService = '', selectedPrice = '', selectedProduct = '';
+
+        function orderNow(service, product, price) {
+            selectedService = service;
+            selectedProduct = product;
+            selectedPrice = price;
+            document.getElementById('popup').style.display = 'flex';
+            const serverBox = document.getElementById('serverBox');
+            serverBox.style.display = currentGame === 'ml' ? 'block' : 'none';
+            document.getElementById('productName').innerText = product;
+            document.getElementById('productPrice').innerText = price;
+            document.getElementById('nicknameBox').innerText = 'Nickname: -';
+        }
+
+        function closePopup() {
+            document.getElementById('popup').style.display = 'none';
+        }
+
+        async function submitOrder() {
+            const userId = document.getElementById('userId').value;
+            const serverId = document.getElementById('serverId').value || '0';
+            if(!userId) return alert('Lengkapi User ID terlebih dahulu!');
+            document.getElementById('loading').style.display = 'block';
+            document.getElementById('resultBox').style.display = 'none';
+            try {
+                const response = await fetch('/order', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ userId, serverId, service: selectedService })
+                });
+                const result = await response.json();
+                document.getElementById('loading').style.display = 'none';
+                const resultBox = document.getElementById('resultBox');
+                resultBox.style.display = 'block';
+                if(result.result || result.success) {
+                    resultBox.className = 'result-box success';
+                    resultBox.innerText = '✅ Transaksi Berhasil';
+                } else {
+                    resultBox.className = 'result-box failed';
+                    resultBox.innerText = '❌ ' + (result.message || 'Transaksi Gagal');
+                }
+            } catch(err) {
+                document.getElementById('loading').style.display = 'none';
+                alert('Koneksi ke server bermasalah!');
+            }
+        }
+
+        loadGame('ml');
+    </script>
+</body>
+  </html>
