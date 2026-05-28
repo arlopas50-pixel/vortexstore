@@ -375,6 +375,15 @@ overflow-x:hidden;
 
 .header{
 margin-bottom:35px;
+
+position:sticky;
+
+top:0;
+
+z-index:1000;
+
+backdrop-filter:blur(12px);
+  
 }
 
 .logo{
