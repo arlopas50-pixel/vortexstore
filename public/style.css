@@ -889,9 +889,9 @@ gap:12px;
 
 .nav-menu{
 
-display:flex !important;
+display:flex;
 
-flex-direction:row !important;
+flex-direction:row;
 
 align-items:center;
 
