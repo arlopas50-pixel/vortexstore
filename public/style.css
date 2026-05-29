@@ -873,23 +873,31 @@ justify-content:space-between;
 
 align-items:center;
 
-padding:16px 20px;
+padding:14px 22px;
 
-background:#081028;
+background:rgba(8,15,40,0.95);
 
-border-radius:18px;
+border-radius:16px;
 
-margin-bottom:20px;
+margin-bottom:25px;
+
+flex-wrap:wrap;
+
+gap:12px;
 
 }
 
 .nav-menu{
 
-display:flex;
+display:flex !important;
+
+flex-direction:row !important;
 
 align-items:center;
 
-gap:20px;
+gap:18px;
+
+flex-wrap:wrap;
 
 }
 
@@ -899,19 +907,36 @@ color:white;
 
 text-decoration:none;
 
-font-size:16px;
+font-size:15px;
 
 font-weight:600;
+
+padding:8px 12px;
+
+border-radius:10px;
+
+transition:0.3s;
+
+}
+
+.nav-menu a:hover{
+
+background:rgba(255,255,255,0.08);
+
+color:#60a5fa;
 
 }
 
 .logo{
 
-font-size:28px;
+font-size:26px;
 
 font-weight:700;
 
 color:white;
+
+white-space:nowrap;
+
 }
 
 </style>
