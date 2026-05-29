@@ -1,3 +1,4 @@
+
 .hero-banner{
 
 position:relative;
@@ -907,15 +908,32 @@ display:none;
 
 flex-direction:column;
 
-gap:14px;
+gap:12px;
 
-background:#111827;
+position:absolute;
+
+top:75px;
+
+left:20px;
+
+width:220px;
 
 padding:18px;
 
-border-radius:16px;
+border-radius:18px;
 
-margin-bottom:20px;
+background:rgba(15,23,42,0.75);
+
+backdrop-filter:blur(16px);
+
+-webkit-backdrop-filter:blur(16px);
+
+border:1px solid rgba(255,255,255,0.08);
+
+box-shadow:
+0 8px 30px rgba(0,0,0,0.35);
+
+z-index:999;
 
 }
 
@@ -925,8 +943,21 @@ color:white;
 
 text-decoration:none;
 
-font-size:16px;
+font-size:15px;
 
 font-weight:600;
 
+padding:10px 12px;
+
+border-radius:12px;
+
+transition:0.3s;
+
 }
+
+.mobile-menu a:hover{
+
+background:rgba(255,255,255,0.08);
+
+}
+
