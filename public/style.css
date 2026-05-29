@@ -18,21 +18,9 @@ margin-bottom:20px;
 
 }
 
-.logo{
-
-font-size:28px;
-
-font-weight:700;
-
-color:white;
-
-}
-
 .nav-menu{
 
 display:flex;
-
-flex-direction:row;
 
 align-items:center;
 
@@ -50,13 +38,15 @@ font-size:16px;
 
 font-weight:600;
 
-padding:8px 0;
-
 }
 
-.nav-menu a:hover{
+.logo{
 
-color:#4da6ff;
+font-size:28px;
+
+font-weight:700;
+
+color:white;
 
 }
 
