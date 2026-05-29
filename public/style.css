@@ -10,15 +10,11 @@ align-items:center;
 
 padding:16px 20px;
 
-background:rgba(8,15,40,0.95);
+background:#081028;
 
-position:sticky;
+border-radius:18px;
 
-top:0;
-
-z-index:1000;
-
-backdrop-filter:blur(10px);
+margin-bottom:20px;
 
 }
 
@@ -36,7 +32,11 @@ color:white;
 
 display:flex;
 
-gap:18px;
+flex-direction:row;
+
+align-items:center;
+
+gap:20px;
 
 }
 
@@ -50,7 +50,7 @@ font-size:16px;
 
 font-weight:600;
 
-transition:0.3s;
+padding:8px 0;
 
 }
 
