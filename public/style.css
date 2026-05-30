@@ -870,13 +870,13 @@ display:flex;
 
 align-items:center;
 
-gap:12px;
+gap:15px;
 
 padding:10px 16px;
 
 background:#081028;
 
-border-radius:16px;
+border-radius:17px;
 
 margin-bottom:20px;
 
@@ -902,7 +902,7 @@ justify-content:center;
 
 .logo{
 
-font-size:20px;
+font-size:600px;
 
 font-weight:700;
 
