@@ -870,31 +870,39 @@ display:flex;
 
 align-items:center;
 
-gap:16px;
+gap:12px;
 
-padding:16px 20px;
+padding:10px 16px;
 
 background:#081028;
 
-border-radius:18px;
+border-radius:16px;
 
 margin-bottom:20px;
+
+height:60px;
 
 }
 
 .menu-btn{
 
-font-size:28px;
+font-size:24px;
 
-color:white;
+width:32px;
 
-cursor:pointer;
+height:32px;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
 
 }
 
 .logo{
 
-font-size:24px;
+font-size:18px;
 
 font-weight:700;
 
@@ -910,7 +918,7 @@ top:0;
 
 left:-280px;
 
-width:260px;
+width:200px;
 
 height:100vh;
 
@@ -926,7 +934,7 @@ display:flex;
 
 flex-direction:column;
 
-gap:25px;
+gap:18px;
 
 transition:0.3s;
 
@@ -950,17 +958,33 @@ font-size:18px;
 
 font-weight:600;
 
+padding:12px 0;
+
+border-bottom:1px solid rgba(255,255,255,0.08);
+
 }
 
 .close-btn{
 
-font-size:30px;
+display:inline-flex;
+
+align-items:center;
+
+justify-content:center;
+
+width:40px;
+
+height:40px;
+
+font-size:24px;
 
 color:white;
 
 cursor:pointer;
 
-margin-bottom:20px;
+border-radius:10px;
+
+margin-bottom:25px;
 
 }
 
