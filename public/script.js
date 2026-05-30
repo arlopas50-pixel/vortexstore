@@ -1,3 +1,4 @@
+
 async function checkNickname(){
 
 const userId =
@@ -338,14 +339,11 @@ function toggleMenu(){
 const menu =
 document.getElementById("mobileMenu");
 
-if(menu.style.display === "flex"){
+const overlay =
+document.getElementById("overlay");
 
-menu.style.display = "none";
+menu.classList.toggle("active");
 
-}else{
-
-menu.style.display = "flex";
-
-}
+overlay.classList.toggle("active");
 
 }
