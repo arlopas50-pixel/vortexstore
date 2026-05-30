@@ -14,17 +14,24 @@
 <body>
 
 <header class="navbar">
-<header class="navbar">
 
 <div class="menu-btn"
 onclick="toggleMenu()">
-
 ☰
-
 </div>
 
 <div class="logo">
 ⚡ VortexStore
+</div>
+
+<div class="search-container">
+
+<input
+type="text"
+id="searchInput"
+placeholder="Cari..."
+onkeyup="searchProducts()">
+
 </div>
 
 </header>
@@ -53,16 +60,7 @@ onclick="toggleMenu()">
 
 </nav>
 
-</header>
-
 <!-- HEADER -->
-
-<div class="search-box">
-<input type="text"
-id="searchInput"
-placeholder="Cari produk..."
-onkeyup="searchProducts()">
-</div>
 
 <!-- PRODUCTS -->
 
