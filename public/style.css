@@ -872,11 +872,13 @@ align-items:center;
 
 gap:10px;
 
-padding:8px 14px;
+padding:10px 16px;
 
-min-height:50px;
+background:#081028;
 
-border-radius:12px;
+border-radius:14px;
+
+margin-bottom:15px;
 
 }
 
