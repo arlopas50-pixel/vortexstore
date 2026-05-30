@@ -876,9 +876,9 @@ padding:10px 16px;
 
 background:#081028;
 
-border-radius:14px;
+border-radius:10px;
 
-margin-bottom:15px;
+margin-bottom:13px;
 
 }
 
@@ -890,9 +890,9 @@ color:white;
 
 cursor:pointer;
 
-width:32px;
+width:30px;
 
-height:32px;
+height:30px;
 
 display:flex;
 
@@ -906,7 +906,7 @@ justify-content:center;
 
 font-size:22px;
 
-font-weight:500;
+font-weight:800;
 
 color:white;
 
