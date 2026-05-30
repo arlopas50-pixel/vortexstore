@@ -884,7 +884,11 @@ margin-bottom:15px;
 
 .menu-btn{
 
-font-size:24px;
+font-size:22px;
+
+color:white;
+
+cursor:pointer;
 
 width:32px;
 
@@ -900,9 +904,9 @@ justify-content:center;
 
 .logo{
 
-font-size:16px;
+font-size:22px;
 
-font-weight:600;
+font-weight:700;
 
 color:white;
 
