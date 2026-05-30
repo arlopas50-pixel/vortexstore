@@ -912,6 +912,44 @@ color:white;
 
 }
 
+.search-container{
+
+flex:1;
+
+display:flex;
+
+justify-content:flex-end;
+
+}
+
+#searchInput{
+
+width:120px;
+
+height:32px;
+
+border:none;
+
+outline:none;
+
+padding:0 10px;
+
+border-radius:8px;
+
+background:rgba(255,255,255,0.1);
+
+color:white;
+
+font-size:14px;
+
+}
+
+#searchInput::placeholder{
+
+color:rgba(255,255,255,0.7);
+
+}
+
 .side-menu{
 
 position:fixed;
