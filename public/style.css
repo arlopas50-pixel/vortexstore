@@ -870,15 +870,13 @@ display:flex;
 
 align-items:center;
 
-gap:15px;
+gap:10px;
 
-padding:10px 14px;
+padding:8px 14px;
 
-background:#081028;
+min-height:50px;
 
-border-radius:17px;
-
-margin-bottom:20px;
+border-radius:12px;
 
 }
 
