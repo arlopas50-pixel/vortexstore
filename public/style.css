@@ -13,9 +13,9 @@ margin-bottom:25px;
 background:
 linear-gradient(
 135deg,
-#0f172a,
-#1e3a8a,
-#2563eb
+#0b0415,
+#2d0a4f,
+#5b21b6
 );
 
 display:flex;
@@ -24,6 +24,26 @@ justify-content:center;
 
 box-shadow:
 0 0 25px rgba(37,99,235,0.5);
+
+}
+
+.hero-banner::before{
+
+content:"";
+
+position:absolute;
+
+width:400px;
+height:400px;
+
+background:#8b5cf6;
+
+filter:blur(120px);
+
+left:-100px;
+top:-100px;
+
+opacity:.4;
 
 }
 
@@ -164,6 +184,7 @@ align-content:start;
 }
 
 /* glow effect background */
+
 .gaming-banner::before {
   content: "";
   position: absolute;
@@ -299,6 +320,9 @@ transition:0.35s ease;
 box-shadow:
 0 0 20px rgba(59,130,246,0.15);
 
+border:
+1px solid rgba(139,92,246,.2);
+
 }
 
 .game-card img{
@@ -322,7 +346,7 @@ filter:brightness(1);
 
 transform:translateY(-5px);
 
-box-shadow:0 0 25px rgba(59,130,246,0.5);
+box-shadow:0 0 40px rgba(139,92,246,.5);
 
 transform:
 translateY(-6px)
@@ -391,6 +415,8 @@ background:#2563eb;
 
 }
 
+
+
 #nicknameBox{
 
 margin-top:10px;
@@ -440,14 +466,23 @@ font-family:Arial,sans-serif;
 }
 
 body{
+
 background:
-radial-gradient(circle at top right,#1e3a8a 0%,transparent 30%),
-radial-gradient(circle at bottom left,#0f766e 0%,transparent 30%),
-#020617;
+radial-gradient(
+circle at top right,
+rgba(139,92,246,.35),
+transparent 35%
+),
+
+radial-gradient(
+circle at bottom left,
+rgba(192,38,255,.25),
+transparent 35%
+),
+
+#05010a;
+
 color:white;
-padding:25px;
-min-height:100vh;
-overflow-x:hidden;
 }
 
 /* HEADER */
@@ -514,11 +549,11 @@ align-content:start;
 /* CARD */
 
 .card{
-background:rgba(15,23,42,0.85);
-border:1px solid rgba(255,255,255,0.05);
+background:rgba(20,10,35,.85);
+border:1px solid rgba(139,92,246,.15
 padding:22px;
 border-radius:24px;
-backdrop-filter:blur(10px);
+backdrop-filter:blur(15px);
 transition:0.3s;
 box-shadow:
 0 0 15px rgba(59,130,246,0.08);
@@ -528,9 +563,9 @@ box-sizing:border-box;
 }
 
 .card:hover{
-transform:translateY(-4px);
+transform:translateY(-5px);
 box-shadow:
-0 0 20px rgba(59,130,246,0.2);
+0 0 35px rgba(139,92,246,.35);
 }
 
 .card h2{
@@ -1037,7 +1072,13 @@ gap:15px;
 
 padding:10px 15px;
 
-background:#081028;
+background:
+rgba(15,6,24,.8);
+
+backdrop-filter:blur(20px);
+
+border:
+1px solid rgba(139,92,246,.15);
 
 border-radius:15px;
 
