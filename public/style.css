@@ -76,6 +76,94 @@ min-height:700px;
 align-content:start;
 }
 
+.promo-banner {
+  height: 100vh;
+  background: url('promo.jpg') center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  color: white;
+  text-align: center;
+  padding: 20px;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+}
+
+.promo-content {
+  position: relative;
+  max-width: 700px;
+}
+
+.badge {
+  background: #ff3b3b;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  display: inline-block;
+  margin-bottom: 15px;
+}
+
+.promo-content h1 {
+  font-size: 3rem;
+  margin-bottom: 10px;
+}
+
+.promo-content p {
+  opacity: 0.9;
+  margin-bottom: 25px;
+}
+
+.countdown {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 25px;
+}
+
+.countdown div {
+  background: rgba(255,255,255,0.1);
+  padding: 10px;
+  border-radius: 10px;
+  min-width: 70px;
+}
+
+.countdown span {
+  display: block;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.btn {
+  padding: 12px 24px;
+  background: #00c2ff;
+  color: black;
+  text-decoration: none;
+  border-radius: 10px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  transform: translateY(-3px);
+  background: #00a6dd;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .promo-content h1 {
+    font-size: 2rem;
+  }
+
+  .countdown {
+    flex-wrap: wrap;
+  }
+}
+
 .card{
 width:100%;
 overflow:hidden;
