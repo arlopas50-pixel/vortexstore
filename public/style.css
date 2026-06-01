@@ -27,26 +27,6 @@ box-shadow:
 
 }
 
-.hero-banner::before{
-
-content:"";
-
-position:absolute;
-
-width:400px;
-height:400px;
-
-background:#8b5cf6;
-
-filter:blur(120px);
-
-left:-100px;
-top:-100px;
-
-opacity:.4;
-
-}
-
 .slide{
 
 position:absolute;
@@ -184,7 +164,6 @@ align-content:start;
 }
 
 /* glow effect background */
-
 .gaming-banner::before {
   content: "";
   position: absolute;
