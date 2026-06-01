@@ -149,21 +149,6 @@ align-content:start;
   }
 }
 
-@media (max-width: 768px) {
-  .promo-hero h1 {
-    font-size: 1.6rem;
-  }
-
-  .promo-hero p {
-    font-size: 0.9rem;
-  }
-
-  .promo-actions {
-    flex-direction: column;
-    gap: 10px;
-  }
-}
-
 .card{
 width:100%;
 overflow:hidden;
