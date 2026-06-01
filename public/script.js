@@ -347,3 +347,52 @@ menu.classList.toggle("active");
 overlay.classList.toggle("active");
 
 }
+
+const promos = [
+  {
+    tag: "🔥 Promo Mingguan",
+    title: "Diskon Hingga 50%",
+    desc: "Semua produk digital sedang diskon besar minggu ini!"
+  },
+  {
+    tag: "⚡ Flash Sale",
+    title: "Sale 24 Jam Saja",
+    desc: "Cepat! Harga spesial akan berakhir hari ini."
+  },
+  {
+    tag: "🎉 Event Spesial",
+    title: "Bundle Hemat Vortex",
+    desc: "Beli lebih banyak, hemat lebih besar untuk semua item."
+  }
+];
+
+let index = 0;
+
+function updatePromo() {
+  const promo = promos[index];
+
+  const title = document.getElementById("promo-title");
+  const desc = document.getElementById("promo-desc");
+  const tag = document.getElementById("promo-tag");
+
+  // fade effect
+  title.style.opacity = 0;
+  desc.style.opacity = 0;
+
+  setTimeout(() => {
+    tag.innerText = promo.tag;
+    title.innerText = promo.title;
+    desc.innerText = promo.desc;
+
+    title.style.opacity = 1;
+    desc.style.opacity = 1;
+  }, 300);
+
+  index = (index + 1) % promos.length;
+}
+
+// first load
+updatePromo();
+
+// rotate every 5 seconds
+setInterval(updatePromo, 5000);
