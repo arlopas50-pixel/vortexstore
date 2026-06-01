@@ -99,14 +99,15 @@ align-content:start;
 }
 
 .promo-hero h1 {
-  font-size: 3rem;
+  font-size: 2.2rem;
   margin-bottom: 10px;
   transition: opacity 0.4s ease;
 }
 
 .promo-hero p {
+  font-size: 1rem;
   opacity: 0.85;
-  margin-bottom: 25px;
+  margin-bottom: 20px;
   transition: opacity 0.4s ease;
 }
 
@@ -145,6 +146,21 @@ align-content:start;
   to {
     transform: scale(1);
     opacity: 1;
+  }
+}
+
+@media (max-width: 768px) {
+  .promo-hero h1 {
+    font-size: 1.6rem;
+  }
+
+  .promo-hero p {
+    font-size: 0.9rem;
+  }
+
+  .promo-actions {
+    flex-direction: column;
+    gap: 10px;
   }
 }
 
