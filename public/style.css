@@ -76,91 +76,75 @@ min-height:700px;
 align-content:start;
 }
 
-.promo-banner {
+.promo-hero {
   height: 100vh;
-  background: url('promo.jpg') center/cover no-repeat;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
+  background: linear-gradient(135deg, #0f172a, #1e293b);
   color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   text-align: center;
   padding: 20px;
 }
 
-.overlay {
-  position: absolute;
-  inset: 0;
-  background: rgba(0,0,0,0.6);
-}
-
-.promo-content {
-  position: relative;
-  max-width: 700px;
-}
-
-.badge {
+.promo-tag {
   background: #ff3b3b;
   padding: 6px 14px;
   border-radius: 20px;
-  font-size: 0.9rem;
-  display: inline-block;
   margin-bottom: 15px;
+  font-weight: bold;
+  font-size: 0.9rem;
+  animation: pop 0.5s ease;
 }
 
-.promo-content h1 {
+.promo-hero h1 {
   font-size: 3rem;
   margin-bottom: 10px;
+  transition: opacity 0.4s ease;
 }
 
-.promo-content p {
-  opacity: 0.9;
+.promo-hero p {
+  opacity: 0.85;
   margin-bottom: 25px;
+  transition: opacity 0.4s ease;
 }
 
-.countdown {
+.promo-actions {
   display: flex;
-  justify-content: center;
   gap: 15px;
-  margin-bottom: 25px;
-}
-
-.countdown div {
-  background: rgba(255,255,255,0.1);
-  padding: 10px;
-  border-radius: 10px;
-  min-width: 70px;
-}
-
-.countdown span {
-  display: block;
-  font-size: 1.5rem;
-  font-weight: bold;
 }
 
 .btn {
-  padding: 12px 24px;
-  background: #00c2ff;
-  color: black;
-  text-decoration: none;
+  padding: 12px 22px;
   border-radius: 10px;
+  text-decoration: none;
   font-weight: bold;
   transition: 0.3s;
 }
 
-.btn:hover {
-  transform: translateY(-3px);
-  background: #00a6dd;
+.primary {
+  background: #00c2ff;
+  color: black;
 }
 
-/* Mobile */
-@media (max-width: 768px) {
-  .promo-content h1 {
-    font-size: 2rem;
-  }
+.secondary {
+  border: 1px solid white;
+  color: white;
+}
 
-  .countdown {
-    flex-wrap: wrap;
+.btn:hover {
+  transform: translateY(-3px);
+}
+
+@keyframes pop {
+  from {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
   }
 }
 
