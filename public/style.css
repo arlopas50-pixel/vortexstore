@@ -296,22 +296,14 @@ filter:brightness(0.8);
 }
 
 .game-card:hover img{
-
-transform:scale(1.08);
-
 filter:brightness(1);
+transform:translateY(-6px) scale(1.08);
 
-transform:translateY(-5px);
+}
 
-box-shadow:0 0 40px rgba(139,92,246,.5);
+.game-card:hover{
+box-shadow:0 0 30px rgba(59,130,246,0.45);
 
-transform:
-translateY(-6px)
-scale(1.02);
-
-box-shadow:
-0 0 30px rgba(59,130,246,0.45);
-  
 }
 
 .game-card h2{
