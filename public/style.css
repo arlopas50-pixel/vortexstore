@@ -51,12 +51,6 @@ opacity:1;
 
 }
 
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-}
-
 body{
 overflow-x:hidden;
 min-height:100vh;
@@ -394,8 +388,6 @@ background:#2563eb;
 
 }
 
-
-
 #nicknameBox{
 
 margin-top:10px;
@@ -664,8 +656,6 @@ cursor:pointer;
 
 .close-btn{
 background:#ef4444 !important;
-}
-
 }
 
 .features{
