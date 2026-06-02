@@ -12,7 +12,7 @@ align-content:start;
 }
 
 .gaming-banner {
-  height: 70vh;
+  height: 320px;
   background: radial-gradient(circle at top, #1b1f3a, #0b0f1a);
   color: white;
   display: flex;
@@ -20,7 +20,7 @@ align-content:start;
   justify-content: center;
   align-items: center;
   text-align: center;
-  padding: 20px;
+  padding: 40px 20px;
   position: relative;
   overflow: hidden;
 }
