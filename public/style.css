@@ -242,10 +242,6 @@ width:100%;
 max-width:100%;
 }
 
-.footer{
-margin-top:auto;
-}
-
 .game-grid{
 
 display:grid;
@@ -690,7 +686,7 @@ font-size:14px;
 
 .footer{
 
-margin-top:50px;
+margin-top:auto;
 
 padding:40px 20px;
 
