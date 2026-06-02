@@ -1,56 +1,4 @@
 
-.hero-banner{
-
-position:relative;
-height:180px;
-
-border-radius:20px;
-
-overflow:hidden;
-
-margin-bottom:25px;
-
-background:
-linear-gradient(
-135deg,
-#0b0415,
-#2d0a4f,
-#5b21b6
-);
-
-display:flex;
-align-items:center;
-justify-content:center;
-
-box-shadow:
-0 0 25px rgba(37,99,235,0.5);
-
-}
-
-.slide{
-
-position:absolute;
-
-font-size:28px;
-font-weight:bold;
-
-color:white;
-
-opacity:0;
-
-transition:1s;
-
-text-align:center;
-padding:20px;
-
-}
-
-.slide.active{
-
-opacity:1;
-
-}
-
 .products{
 display:grid;
 grid-template-columns:
@@ -61,79 +9,6 @@ gap:15px;
 min-height:700px;
 
 align-content:start;
-}
-
-.promo-hero {
-  height: 100vh;
-  background: linear-gradient(135deg, #0f172a, #1e293b);
-  color: white;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  padding: 20px;
-}
-
-.promo-tag {
-  background: #ff3b3b;
-  padding: 6px 14px;
-  border-radius: 20px;
-  margin-bottom: 15px;
-  font-weight: bold;
-  font-size: 0.9rem;
-  animation: pop 0.5s ease;
-}
-
-.promo-hero h1 {
-  font-size: 2.2rem;
-  margin-bottom: 10px;
-  transition: opacity 0.4s ease;
-}
-
-.promo-hero p {
-  font-size: 1rem;
-  opacity: 0.85;
-  margin-bottom: 20px;
-  transition: opacity 0.4s ease;
-}
-
-.promo-actions {
-  display: flex;
-  gap: 15px;
-}
-
-.btn {
-  padding: 12px 22px;
-  border-radius: 10px;
-  text-decoration: none;
-  font-weight: bold;
-  transition: 0.3s;
-}
-
-.primary {
-  background: #00c2ff;
-  color: black;
-}
-
-.secondary {
-  border: 1px solid white;
-  color: white;
-}
-
-.btn:hover {
-  transform: translateY(-3px);
-}
-
-@keyframes pop {
-  from {
-    transform: scale(0.8);
-    opacity: 0;
-  }
-  to {
-    transform: scale(1);
-    opacity: 1;
-  }
 }
 
 .gaming-banner {
@@ -265,10 +140,6 @@ height:180px;
 border-radius:20px;
 
 background:#111827;
-  
-cursor:pointer;
-
-transition:0.3s;
 
 cursor:pointer;
 
@@ -901,9 +772,18 @@ margin-top:20px;
 
 .event-card{
 
+position:relative;
+
+overflow:hidden;
+
 padding:18px;
 
 border-radius:18px;
+
+background:
+rgba(15,23,42,.8);
+
+backdrop-filter:blur(10px);
 
 }
 
