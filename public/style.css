@@ -681,15 +681,6 @@ box-shadow:
 
 }
 
-.feature-box:hover{
-
-transform:translateY(-5px);
-
-box-shadow:
-0 0 25px rgba(59,130,246,0.5);
-
-}
-
 .feature-box h3{
 
 color:white;
