@@ -51,13 +51,6 @@ opacity:1;
 
 }
 
-body{
-overflow-x:hidden;
-min-height:100vh;
-display:flex;
-flex-direction:column;
-}
-
 .products{
 display:grid;
 grid-template-columns:
@@ -231,11 +224,6 @@ align-content:start;
 
 .cta-btn:hover {
   transform: scale(1.05);
-}
-
-.card{
-width:100%;
-overflow:hidden;
 }
 
 .popup-box{
@@ -437,6 +425,10 @@ font-family:Arial,sans-serif;
 }
 
 body{
+overflow-x:hidden;
+min-height:100vh;
+display:flex;
+flex-direction:column;
 
 background:
 radial-gradient(
@@ -444,13 +436,11 @@ circle at top right,
 rgba(139,92,246,.35),
 transparent 35%
 ),
-
 radial-gradient(
 circle at bottom left,
 rgba(192,38,255,.25),
 transparent 35%
 ),
-
 #05010a;
 
 color:white;
@@ -518,6 +508,7 @@ box-shadow:
 0 0 15px rgba(59,130,246,0.08);
 width:100%;
 box-sizing:border-box;
+overflow:hidden;
 
 }
 
