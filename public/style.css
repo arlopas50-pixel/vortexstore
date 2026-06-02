@@ -537,8 +537,6 @@ opacity:0.9;
 
 /* MOBILE */
 
-{@media(max-width:700px)}
-
 .title{
 font-size:34px;
 }
