@@ -848,9 +848,20 @@ padding:18px;
 border-radius:18px;
 
 background:
-rgba(15,23,42,.8);
+linear-gradient(
+135deg,
+rgba(15,23,42,.92),
+rgba(30,41,59,.85)
+);
 
-backdrop-filter:blur(10px);
+border:1px solid
+rgba(255,255,255,.08);
+
+backdrop-filter:blur(12px);
+
+transition:
+transform .3s ease,
+box-shadow .3s ease;
 
 }
 
@@ -860,27 +871,58 @@ content:"";
 
 position:absolute;
 
-width:120px;
-height:120px;
+width:140px;
+height:140px;
 
 background:
-rgba(59,130,246,0.15);
+rgba(59,130,246,.18);
 
 border-radius:50%;
 
-top:-40px;
-right:-40px;
+top:-50px;
+right:-50px;
 
-filter:blur(35px);
+filter:blur(40px);
+
+}
+
+.event-card::after{
+
+content:"";
+
+position:absolute;
+
+top:0;
+left:-120%;
+
+width:100%;
+height:100%;
+
+background:
+linear-gradient(
+90deg,
+transparent,
+rgba(255,255,255,.08),
+transparent
+);
+
+transition:.8s;
+
+}
+
+.event-card:hover::after{
+
+left:120%;
 
 }
 
 .event-card:hover{
 
-transform:translateY(-5px);
+transform:translateY(-6px);
 
 box-shadow:
-0 0 25px rgba(59,130,246,0.35);
+0 15px 35px
+rgba(59,130,246,.25);
 
 }
 
@@ -896,8 +938,6 @@ position:relative;
 
 z-index:2;
 
-display:block;
-
 }
 
 .event-card p{
@@ -912,11 +952,7 @@ position:relative;
 
 z-index:2;
 
-text-align:left !important;
-
-margin:0 !important;
-
-display:block;
+margin:0;
 
 }
 
@@ -927,6 +963,10 @@ display:flex;
 flex-direction:column;
 
 gap:6px;
+
+position:relative;
+
+z-index:2;
 
 }
 
