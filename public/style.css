@@ -23,11 +23,14 @@ margin-bottom:20px;
 overflow:hidden;
 }
 
+
 .hero-banner::before{
 content:"";
 position:absolute;
-inset:0;
-background:radial-gradient(circle at top,rgba(255,255,255,0.08),transparent 60%);
+inset:-50px;
+background:
+radial-gradient(circle at top, rgba(0,194,255,0.15), transparent 60%),
+radial-gradient(circle at bottom, rgba(108,92,231,0.15), transparent 60%);
 pointer-events:none;
 }
 
@@ -35,6 +38,35 @@ pointer-events:none;
 text-align:center;
 color:white;
 padding:20px;
+position:relative;
+z-index:2;
+}
+
+.hero-badge{
+display:inline-block;
+padding:6px 14px;
+border-radius:999px;
+background:rgba(255,255,255,0.08);
+border:1px solid rgba(255,255,255,0.15);
+font-size:12px;
+margin-bottom:10px;
+backdrop-filter:blur(10px);
+}
+
+.hero-meta{
+display:flex;
+justify-content:center;
+gap:10px;
+flex-wrap:wrap;
+margin-bottom:15px;
+}
+
+.hero-meta span{
+font-size:12px;
+padding:6px 10px;
+border-radius:10px;
+background:rgba(255,255,255,0.06);
+border:1px solid rgba(255,255,255,0.08);
 }
 
 .hero-content h1{
