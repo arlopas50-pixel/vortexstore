@@ -13,7 +13,7 @@ align-content:start;
 
 .hero-banner{
 position:relative;
-height:250px;
+height:300px;
 border-radius:20px;
 display:flex;
 align-items:center;
@@ -42,12 +42,26 @@ position:relative;
 z-index:2;
 }
 
+.hero-content h1{
+font-size:42px;
+font-weight:800;
+letter-spacing:-1px;
+}
+
+.hero-content p{
+max-width:500px;
+margin:10px auto 18px;
+line-height:1.4;
+color:#dbe4ff;
+}
+
 .hero-badge{
 display:inline-block;
 padding:6px 14px;
 border-radius:999px;
 background:rgba(255,255,255,0.08);
 border:1px solid rgba(255,255,255,0.15);
+box-shadow:0 0 20px rgba(59,130,246,.15);
 font-size:12px;
 margin-bottom:10px;
 backdrop-filter:blur(10px);
@@ -67,6 +81,7 @@ padding:6px 10px;
 border-radius:10px;
 background:rgba(255,255,255,0.06);
 border:1px solid rgba(255,255,255,0.08);
+backdrop-filter:blur(8px);
 }
 
 .cta-btn{
@@ -74,7 +89,7 @@ display:inline-block;
 padding:12px 22px;
 border-radius:14px;
 background:linear-gradient(90deg,#00c2ff,#6c5ce7);
-color:#0b0f1a;
+color:white;
 font-weight:bold;
 text-decoration:none;
 box-shadow:0 0 25px rgba(0,194,255,0.25);
