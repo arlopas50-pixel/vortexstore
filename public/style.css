@@ -69,58 +69,21 @@ background:rgba(255,255,255,0.06);
 border:1px solid rgba(255,255,255,0.08);
 }
 
-.hero-content h1{
-font-size:28px;
-margin:10px 0;
-}
-
-.hero-content p{
-color:#cbd5e1;
-margin-bottom:15px;
-}
-
 .cta-btn{
-display:inline-flex;
-align-items:center;
-justify-content:center;
-gap:10px;
-
-padding:14px 28px;
-
-background:
-linear-gradient(
-135deg,
-#00c2ff,
-#6c5ce7
-);
-
-color:#fff;
+display:inline-block;
+padding:12px 22px;
+border-radius:14px;
+background:linear-gradient(90deg,#00c2ff,#6c5ce7);
+color:#0b0f1a;
+font-weight:bold;
 text-decoration:none;
-font-weight:700;
-font-size:16px;
-
-border:none;
-border-radius:16px;
-
-cursor:pointer;
-
-box-shadow:
-0 8px 25px rgba(108,92,231,.35);
-
-transition:
-transform .25s ease,
-box-shadow .25s ease,
-filter .25s ease;
-
-position:relative;
-overflow:hidden;
+box-shadow:0 0 25px rgba(0,194,255,0.25);
+transition:0.3s;
 }
 
 .cta-btn:hover{
-transform:translateY(-3px);
-box-shadow:
-0 15px 35px rgba(108,92,231,.5);
-filter:brightness(1.08);
+transform:scale(1.05);
+box-shadow:0 0 35px rgba(108,92,231,0.45);
 }
 
 .cta-btn:active{
@@ -149,22 +112,6 @@ transition:.6s;
 
 .cta-btn:hover::before{
 left:100%;
-}
-
-.hero-stats{
-display:flex;
-gap:10px;
-justify-content:center;
-margin-top:15px;
-flex-wrap:wrap;
-font-size:12px;
-color:#cbd5e1;
-}
-
-.hero-stats div{
-background:rgba(255,255,255,0.06);
-padding:6px 10px;
-border-radius:10px;
 }
 
 .popup-box{
