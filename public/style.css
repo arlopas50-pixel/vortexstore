@@ -12,43 +12,30 @@ align-content:start;
 }
 
 .hero-banner{
+height:300px;
+border-radius:20px;
 display:flex;
 align-items:center;
 justify-content:center;
+background:linear-gradient(135deg,#0b0415,#2d0a4f,#5b21b6);
+margin-bottom:20px;
+overflow:hidden;
+}
+
+.hero-content{
+text-align:center;
+color:white;
 padding:20px;
 }
 
-.hero-inner{
-display:flex;
-justify-content:space-between;
-width:100%;
-max-width:1000px;
-gap:20px;
+.hero-content h1{
+font-size:28px;
+margin:10px 0;
 }
 
-.hero-left{
-flex:1;
-}
-
-.hero-right{
-flex:1;
-display:flex;
-justify-content:flex-end;
-align-items:center;
-}
-
-.hero-stats{
-display:flex;
-flex-direction:column;
-gap:10px;
-font-size:12px;
+.hero-content p{
 color:#cbd5e1;
-}
-
-.hero-stats div{
-background:rgba(255,255,255,0.06);
-padding:8px 12px;
-border-radius:10px;
+margin-bottom:15px;
 }
 
 .cta-btn{
