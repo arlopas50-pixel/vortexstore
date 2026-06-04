@@ -12,6 +12,7 @@ align-content:start;
 }
 
 .hero-banner{
+position:relative;
 height:300px;
 border-radius:20px;
 display:flex;
@@ -20,6 +21,14 @@ justify-content:center;
 background:linear-gradient(135deg,#0b0415,#2d0a4f,#5b21b6);
 margin-bottom:20px;
 overflow:hidden;
+}
+
+.hero-banner::before{
+content:"";
+position:absolute;
+inset:0;
+background:radial-gradient(circle at top,rgba(255,255,255,0.08),transparent 60%);
+pointer-events:none;
 }
 
 .hero-content{
