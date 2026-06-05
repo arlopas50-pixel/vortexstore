@@ -772,11 +772,11 @@ Pilih nominal yang ingin dibeli
 <div class="package-grid">
 
 <div class="package-option"
-onclick="orderNow(
+onclick="selectPackage(
 'MLA3-S13',
 '3 Diamonds',
 'Rp 1.030'
-)">
+)"
 💎 3 Diamond
 <br>
 <span>Rp 1.030</span>
@@ -808,9 +808,19 @@ Belum memilih paket
 Rp 0
 </h2>
 
-<a href="#" class="checkout-btn">
+<button
+class="checkout-btn"
+onclick="
+orderNow(
+selectedService,
+selectedProduct,
+selectedPrice
+)
+">
+
 Lanjutkan Pembayaran
-</a>
+
+</button>
 
 </div>
 
@@ -1054,6 +1064,20 @@ card.style.display = "none"
 let selectedService = ''
 let selectedPrice = ''
 let selectedProduct = ''
+
+function selectPackage(service,product,price){
+
+selectedService = service
+selectedProduct = product
+selectedPrice = price
+
+document.getElementById('selectedPackage')
+.innerText = product
+
+document.getElementById('selectedPrice')
+.innerText = price
+
+}
 
 function orderNow(service,product,price){
 
