@@ -1,33 +1,3 @@
-function renderProducts(){
-
-const packageGrid =
-document.getElementById(
-'packageGrid'
-)
-
-packageGrid.innerHTML = ''
-
-games.ml.forEach(product => {
-
-packageGrid.innerHTML += `
-
-<div class="package-option"
-onclick="selectPackage(
-'${product.service}',
-'${product.name}',
-'${product.price}'
-)">
-💎 ${product.name}
-<br>
-<span>${product.price}</span>
-</div>
-
-`
-
-})
-
-}
-
 let selectedPayment = ''
 
 function selectPayment(method){
@@ -432,5 +402,34 @@ slides[currentSlide]
 
 },3000)
 
-loadGame(ml)
+function renderProducts(){
+
+const packageGrid =
+document.getElementById(
+'packageGrid'
+)
+
+packageGrid.innerHTML = ''
+
+games.ml.forEach(product => {
+
+packageGrid.innerHTML += `
+
+<div class="package-option"
+onclick="selectPackage(
+'${product.service}',
+'${product.name}',
+'${product.price}'
+)">
+💎 ${product.name}
+<br>
+<span>${product.price}</span>
+</div>
+
+`
+
+})
+
+}
+
 renderProducts()
