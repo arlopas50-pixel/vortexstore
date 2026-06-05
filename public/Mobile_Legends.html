@@ -9,6 +9,32 @@
 
 <style>
 
+.payment-method{
+
+padding:15px;
+border-radius:14px;
+background:#111827;
+margin-bottom:10px;
+cursor:pointer;
+transition:.3s;
+
+}
+
+.payment-method:hover{
+
+border:1px solid #60a5fa;
+
+}
+
+.payment-method.active{
+
+border:1px solid #60a5fa;
+
+box-shadow:
+0 0 20px rgba(59,130,246,.35);
+
+}
+
 .package-option.active{
 
 border:1px solid #60a5fa;
@@ -971,19 +997,23 @@ style="display:none;">
 
 <h2>Pilih Metode Pembayaran</h2>
 
-<div class="payment-method">
+<div class="payment-method"
+onclick="selectPayment('QRIS')">
 💜 QRIS
 </div>
 
-<div class="payment-method">
+<div class="payment-method"
+onclick="selectPayment('DANA')">
 💚 DANA
 </div>
 
-<div class="payment-method">
+<div class="payment-method"
+onclick="selectPayment('OVO')">
 💙 OVO
 </div>
 
-<div class="payment-method">
+<div class="payment-method"
+onclick="selectPayment('GoPay')">
 ❤️ GoPay
 </div>
 
@@ -995,6 +1025,10 @@ Produk
 
 <p id="productPrice">
 Harga
+</p>
+
+<p id="paymentSelected">
+Belum memilih metode pembayaran
 </p>
 
 </div>
@@ -1021,6 +1055,28 @@ Tutup
 </div>
   
 <script>
+
+function selectPayment(method){
+
+selectedPayment = method
+
+document.getElementById(
+'paymentSelected'
+).innerText =
+'Metode: ' + method
+
+document
+.querySelectorAll('.payment-method')
+.forEach(item=>{
+
+item.classList.remove('active')
+
+})
+
+event.currentTarget
+.classList.add('active')
+
+}
 
 async function checkNickname(){
 
