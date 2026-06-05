@@ -395,6 +395,8 @@ alert('Server Error')
 const slides =
 document.querySelectorAll('.slide')
 
+if(slides.length > 0){
+
 let currentSlide = 0
 
 setInterval(()=>{
@@ -414,5 +416,8 @@ slides[currentSlide]
 .classList.add('active')
 
 },3000)
+
+}
+
 
 renderProducts()
