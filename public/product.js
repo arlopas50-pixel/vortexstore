@@ -182,7 +182,7 @@ price:"Rp 15.000"
 
 }
 
-const productContainer = document.querySelector(".products")
+const productContainer = document.querySelector(".packageGrid")
 
 function renderProducts(){
 
