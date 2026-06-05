@@ -347,6 +347,7 @@ overflow-x:hidden;
 min-height:100vh;
 display:flex;
 flex-direction:column;
+border-top: 5px solid red;
 }
 
 .products{
