@@ -9,6 +9,56 @@
 
 <style>
 
+.package-grid{
+
+display:grid;
+
+grid-template-columns:
+repeat(2,1fr);
+
+gap:15px;
+
+margin-top:20px;
+
+}
+
+.package-option{
+
+background:#091428;
+
+padding:18px;
+
+border-radius:16px;
+
+text-align:center;
+
+border:1px solid rgba(255,255,255,.08);
+
+cursor:pointer;
+
+transition:.3s;
+
+}
+
+.package-option:hover{
+
+transform:translateY(-4px);
+
+border-color:#60a5fa;
+
+box-shadow:
+0 0 20px rgba(59,130,246,.25);
+
+}
+
+.package-option span{
+
+color:#60a5fa;
+
+font-weight:bold;
+
+}
+
 .section-title{
 font-size:28px;
 font-weight:bold;
@@ -655,6 +705,28 @@ placeholder="Masukkan Server ID">
 <p class="section-subtitle">
 Pilih nominal yang ingin dibeli
 </p>
+
+<div class="package-grid">
+
+<div class="package-option">
+💎 3 Diamond
+<br>
+<span>Rp 1.030</span>
+</div>
+
+<div class="package-option">
+💎 5 Diamond
+<br>
+<span>Rp 1.452</span>
+</div>
+
+<div class="package-option">
+💎 12 Diamond
+<br>
+<span>Rp 3.000</span>
+</div>
+
+</div>
 
 <div class="products" id="products"></div>
 
