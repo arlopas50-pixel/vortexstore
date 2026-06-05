@@ -703,6 +703,17 @@ background:#ef4444 !important;
 
 }
 
+.package-option.active{
+
+border:1px solid #60a5fa;
+
+box-shadow:
+0 0 20px rgba(59,130,246,.4);
+
+transform:translateY(-3px);
+
+}
+
 </style>
 
 </head>
@@ -782,18 +793,26 @@ onclick="selectPackage(
 <span>Rp 1.030</span>
 </div>
 
-<div class="package-option">
+<div class="package-option"
+onclick="selectPackage(
+'MLA5-S13',
+'5 Diamonds',
+'Rp 1.500/'
+)">
 💎 5 Diamond
 <br>
-<span>Rp 1.452</span>
+<span>Rp 1.500</span>
 </div>
 
-<div class="package-option">
-💎 12 Diamond
+<div class="package-option"
+onclick="selectPackage(
+'MLA12-S13',
+'12 Diamonds',
+'Rp 3.500'
+)">
+💎 3 Diamond
 <br>
-<span>Rp 3.000</span>
-</div>
-
+<span>Rp 3.500</span>
 </div>
 
 <div class="selected-package">
