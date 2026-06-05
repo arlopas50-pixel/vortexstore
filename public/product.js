@@ -1,3 +1,5 @@
+alert("HALO VORTEX")
+
 function renderProducts(){
 
 const grid =
