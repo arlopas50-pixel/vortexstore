@@ -1270,39 +1270,16 @@ document.getElementById('selectedPrice')
 
 }
 
-function orderNow(service,product,price){
-
-selectedService = service
-selectedProduct = product
-selectedPrice = price
+function orderNow(){
 
 document.getElementById('popup')
 .style.display = 'flex'
 
-const serverBox =
-document.getElementById('serverBox')
-
-if(currentGame === 'ml'){
-
-serverBox.style.display = 'block'
-
-}else{
-
-serverBox.style.display = 'none'
-
-}
-
 document.getElementById('productName')
-.innerText = product
+.innerText = selectedProduct
 
 document.getElementById('productPrice')
-.innerText = price
-
-document.getElementById('selectedPackage')
-.innerText = product
-
-document.getElementById('selectedPrice')
-.innerText = price
+.innerText = selectedPrice
 
 }
 
