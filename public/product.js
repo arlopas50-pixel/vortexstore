@@ -1,4 +1,4 @@
-alert("HALO VORTEX")
+alert("JS HIDUP")
 
 function renderProducts(){
 
