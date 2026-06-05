@@ -432,5 +432,4 @@ slides[currentSlide]
 
 },3000)
 
-loadGame('ml')
 renderProducts()
