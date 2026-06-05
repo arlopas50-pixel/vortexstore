@@ -1256,15 +1256,17 @@ let selectedProduct = ''
 
 function selectPackage(service,product,price){
 
+alert(product)
+
 selectedService = service
 selectedProduct = product
 selectedPrice = price
 
-document.getElementById('productName')
-.innerText = selectedProduct
+document.getElementById('selectedPackage')
+.innerText = product
 
-document.getElementById('productPrice')
-.innerText = selectedPrice
+document.getElementById('selectedPrice')
+.innerText = price
 
 }
 
