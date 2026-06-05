@@ -184,36 +184,28 @@ price:"Rp 15.000"
 
 const productContainer = document.querySelector(".products")
 
-function loadGame(game){
+function renderProducts(){
 
-currentGame = game
+const packageGrid =
+document.getElementById(
+'packageGrid'
+)
 
-const productContainer =
-document.getElementById("products")
+packageGrid.innerHTML = ''
 
-productContainer.innerHTML = ""
+games.ml.forEach(product => {
 
-games[game].forEach(product=>{
+packageGrid.innerHTML += `
 
-productContainer.innerHTML += `
-
-<div class="card">
-
-<h2>${product.name}</h2>
-
-<div class="price">
-${product.price}
-</div>
-
-<button class="buy-btn"
-onclick="orderNow(
+<div class="package-option"
+onclick="selectPackage(
 '${product.service}',
 '${product.name}',
 '${product.price}'
 )">
-Buy Now
-</button>
-
+💎 ${product.name}
+<br>
+<span>${product.price}</span>
 </div>
 
 `
@@ -401,35 +393,5 @@ slides[currentSlide]
 .classList.add('active')
 
 },3000)
-
-function renderProducts(){
-
-const packageGrid =
-document.getElementById(
-'packageGrid'
-)
-
-packageGrid.innerHTML = ''
-
-games.ml.forEach(product => {
-
-packageGrid.innerHTML += `
-
-<div class="package-option"
-onclick="selectPackage(
-'${product.service}',
-'${product.name}',
-'${product.price}'
-)">
-💎 ${product.name}
-<br>
-<span>${product.price}</span>
-</div>
-
-`
-
-})
-
-}
 
 renderProducts()
