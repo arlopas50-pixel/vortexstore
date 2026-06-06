@@ -208,7 +208,7 @@ name:"60 UC",
 price:"Rp 15.000"
 }
 
-]
+],
 
 }
 
@@ -253,7 +253,7 @@ Buy Now
 }
 
 
-function searchProducts() {
+/*function searchProducts() {
 
 const input = document
 .getElementById("searchInput")
@@ -279,7 +279,7 @@ card.style.display = "none"
 
 })
 
-}
+}*/
 
 
 let selectedService = ''
@@ -432,5 +432,4 @@ slides[currentSlide]
 
 },3000)*/
 
-loadGame('ml')
 renderProducts()
