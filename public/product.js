@@ -409,7 +409,7 @@ alert('Server Error')
 
 }
 
-const slides =
+/*const slides =
 document.querySelectorAll('.slide')
 
 let currentSlide = 0
@@ -430,7 +430,7 @@ currentSlide = 0
 slides[currentSlide]
 .classList.add('active')
 
-},3000)
+},3000)*/
 
-loadGame(ml)
+loadGame('ml')
 renderProducts()
