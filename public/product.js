@@ -53,7 +53,7 @@ if(userId.length < 5) return
 
 try{
 
-/*const response =
+const response =
 await fetch('/nickname',{
 
 method:'POST',
@@ -85,7 +85,7 @@ document.getElementById(
 
 }
 
-}*/
+}
 
 
 let currentGame = ''
