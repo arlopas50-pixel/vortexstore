@@ -201,7 +201,7 @@ price:"Rp 15.000"
 
 }
 
-/*const productContainer = document.querySelector(".products")
+const productContainer = document.querySelector(".products")
 
 function loadGame(game){
 
@@ -239,7 +239,7 @@ Buy Now
 
 })
 
-}*/
+}
 
 let selectedService = ''
 let selectedPrice = ''
