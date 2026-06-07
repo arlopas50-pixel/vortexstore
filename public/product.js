@@ -39,17 +39,6 @@ document.getElementById(
 ).innerText =
 'Metode: ' + method
 
-document
-.querySelectorAll('.payment-method')
-.forEach(item=>{
-
-item.classList.remove('active')
-
-})
-
-event.currentTarget
-.classList.add('active')
-
 }
 
 async function checkNickname(){
@@ -64,7 +53,7 @@ if(userId.length < 5) return
 
 try{
 
-const response =
+/*const response =
 await fetch('/nickname',{
 
 method:'POST',
@@ -96,7 +85,7 @@ document.getElementById(
 
 }
 
-}
+}*/
 
 
 let currentGame = ''
@@ -212,7 +201,7 @@ price:"Rp 15.000"
 
 }
 
-const productContainer = document.querySelector(".products")
+/*const productContainer = document.querySelector(".products")
 
 function loadGame(game){
 
@@ -250,37 +239,7 @@ Buy Now
 
 })
 
-}
-
-
-/*function searchProducts() {
-
-const input = document
-.getElementById("searchInput")
-.value.toLowerCase()
-
-const cards =
-document.querySelectorAll(".card")
-
-cards.forEach(card => {
-
-const text =
-card.innerText.toLowerCase()
-
-if(text.includes(input)) {
-
-card.style.display = "block"
-
-} else {
-
-card.style.display = "none"
-
-}
-
-})
-
 }*/
-
 
 let selectedService = ''
 let selectedPrice = ''
@@ -408,28 +367,5 @@ alert('Server Error')
 }
 
 }
-
-/*const slides =
-document.querySelectorAll('.slide')
-
-let currentSlide = 0
-
-setInterval(()=>{
-
-slides[currentSlide]
-.classList.remove('active')
-
-currentSlide++
-
-if(currentSlide >= slides.length){
-
-currentSlide = 0
-
-}
-
-slides[currentSlide]
-.classList.add('active')
-
-},3000)*/
 
 renderProducts()
