@@ -201,46 +201,6 @@ price:"Rp 15.000"
 
 }
 
-/*const productContainer = document.querySelector(".products")
-
-function loadGame(game){
-
-currentGame = game
-
-const productContainer =
-document.getElementById("products")
-
-productContainer.innerHTML = ""
-
-games[game].forEach(product=>{
-
-productContainer.innerHTML += `
-
-<div class="card">
-
-<h2>${product.name}</h2>
-
-<div class="price">
-${product.price}
-</div>
-
-<button class="buy-btn"
-onclick="orderNow(
-'${product.service}',
-'${product.name}',
-'${product.price}'
-)">
-Buy Now
-</button>
-
-</div>
-
-`
-
-})
-
-}*/
-
 let selectedService = ''
 let selectedPrice = ''
 let selectedProduct = ''
