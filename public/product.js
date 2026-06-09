@@ -137,7 +137,7 @@ price:"Rp 6.000"
 
 {
 service:"MLA22-S13",
-name:"22 Diamond",
+name:"22 Diamonds",
 price:"Rp 7.000",
 },
 
@@ -149,7 +149,7 @@ price:"Rp 8.000"
 
 {
 service:"MLA36-S13",
-name:"36 Diamond",
+name:"36 Diamonds",
 price:"Rp 10.000",
 },
 
