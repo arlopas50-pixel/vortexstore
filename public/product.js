@@ -41,7 +41,7 @@ document.getElementById(
 
 }
 
-async function checkNickname(){
+/*async function checkNickname(){
 
 const userId =
 document.getElementById("userId").value
@@ -85,7 +85,7 @@ document.getElementById(
 
 }
 
-}
+}*/
 
 
 let currentGame = ''
