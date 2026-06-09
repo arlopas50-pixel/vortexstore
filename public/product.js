@@ -221,6 +221,14 @@ document.getElementById('selectedPrice')
 
 function orderNow(){
 
+if(!selectedProduct){
+
+alert('Pilih paket terlebih dahulu')
+
+return
+
+}
+
 document.getElementById('popup')
 .style.display = 'flex'
 
